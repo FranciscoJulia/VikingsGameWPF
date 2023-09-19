@@ -8,37 +8,43 @@ namespace VikingsGameWPF
 {
     public class VikingPlayer
     {
-        public VikingPlayer(string nombre) 
-		{
-			this.nombre = nombre;
-			tipo = "Agricultor";
-			monedas = 0;
-			experiencia = 0;
-			lealtad = 0;
-		}
-
 		public VikingPlayer() 
 		{
             tipo = "Agricultor";
             monedas = 0;
             experiencia = 0;
             lealtad = 0;
+			vida = 100;
 			HachaNormal = true;
 			EscudoMadera = true;
 			EspadaBronce = true;
+			CasaChoza = true;
+			ComidaPan = true;
         }
 
 
-
+		//HACHAS
         public bool HachaNormal { get; set; }
         public bool HachaDoble { get; set; }
-        public bool HachaPico { get; set; }
-        public bool EspadaBronce { get; set; }
+		public bool HachaPico { get; set; }
+		//ESPADAS
+		public bool EspadaBronce { get; set; }
         public bool EspadaHierro { get; set; }
         public bool EspadaAcero { get; set; }
+		//ESCUDOS
         public bool EscudoMadera { get; set; }
         public bool EscudoReforzado { get; set; }
-        public bool EscudoUltimum { get; set; }	
+        public bool EscudoUltimum { get; set; }
+		//CASAS
+        public bool CasaChoza { get; set; }
+        public bool CasaPequeña { get; set; }
+        public bool CasaMansion { get; set; }
+        public bool CasaMansionPiedra{ get; set; }
+		//COMIDAS
+        public bool ComidaPan { get; set; }
+        public bool ComidaPescado { get; set; }
+        public bool ComidaPollo { get; set; }
+        public bool ComidaFestin { get; set; }
 
 
         private int id;
@@ -76,10 +82,16 @@ namespace VikingsGameWPF
         {
             get { return lealtad; }
             set { lealtad = value; }
-        }	
+        }
+		private int vida;
+		public int Vida
+		{
+			get { return vida; }
+			set { vida = value; }
+		}
 
 
 
 
-    }
+	}
 }

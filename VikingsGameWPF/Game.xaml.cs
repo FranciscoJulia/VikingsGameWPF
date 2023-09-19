@@ -38,9 +38,6 @@ namespace VikingsGameWPF
         }
 
 
-        
-
-
 
         VikingPlayer player = new VikingPlayer();
         
@@ -81,7 +78,7 @@ namespace VikingsGameWPF
         //ALIMENTO
         private void rImgAlimento_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MyFrame.NavigationService.Navigate(new PageAlimento());
+            MyFrame.NavigationService.Navigate(new PageAlimento(player));
         }
         private void rImgAlimento_MouseEnter(object sender, MouseEventArgs e)
         {

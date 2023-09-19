@@ -26,6 +26,9 @@ namespace VikingsGameWPF
         {
             InitializeComponent();
             this.player = player;
+
+            FrameArmamento.NavigationService.Navigate(new PageHachas(player));
+            rImgHachas.StrokeThickness = 5;
         }
 
 

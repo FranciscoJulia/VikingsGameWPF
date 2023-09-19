@@ -42,7 +42,5 @@
         <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="33" Margin="404,208,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
         <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="482,208,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
         <Label x:Name="lblActual" Content="Escudo actual" HorizontalAlignment="Left" Height="40" Margin="19,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Label x:Name="lblPrecio_Copiar" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="470,132,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
-
     </Grid>
 </Page>

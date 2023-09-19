@@ -1,0 +1,52 @@
+﻿<Page x:Class="VikingsGameWPF.PageCasas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VikingsGameWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="440" d:DesignWidth="645"
+      Title="PageCasas">
+
+    <Grid>
+        <Rectangle x:Name="rImgEscudoActual" HorizontalAlignment="Left" Height="158" Margin="30,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Casa.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="rImgChoza" HorizontalAlignment="Center" Height="131" Margin="0,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgChoza_MouseEnter">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/choza.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="rImgCasaPequeña" HorizontalAlignment="Center" Height="130" Stroke="Black" VerticalAlignment="Center" Width="135" MouseEnter="rImgCasaPequeña_MouseEnter">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/pequeñaCasa.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="rImgMansion" HorizontalAlignment="Center" Height="131" Margin="0,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgMansion_MouseEnter">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Mansion.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="212,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="-7,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,417,0,0"/>
+        <Label x:Name="lblNombreEscudo" Content="Label" HorizontalAlignment="Left" Height="50" Margin="404,84,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="428,22,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
+        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="404,132,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="470,132,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="404,170,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="454,170,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="33" Margin="404,208,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="482,208,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblActual" Content="Hogar actual" HorizontalAlignment="Left" Height="56" Margin="19,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Rectangle x:Name="rImgMansionPiedra" HorizontalAlignment="Left" Height="148" Margin="480,280,0,0" Stroke="Black" VerticalAlignment="Top" Width="153" MouseEnter="rImgMansionPiedra_MouseEnter">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/MansionPiedra.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+    </Grid>
+</Page>

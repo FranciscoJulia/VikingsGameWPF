@@ -62,6 +62,12 @@
     <Compile Include="PageArmamento.xaml.cs">
       <DependentUpon>PageArmamento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageCasas.xaml.cs">
+      <DependentUpon>PageCasas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageComidas.xaml.cs">
+      <DependentUpon>PageComidas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageEscudos.xaml.cs">
       <DependentUpon>PageEscudos.xaml</DependentUpon>
     </Compile>
@@ -99,6 +105,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageArmamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageCasas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageComidas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,6 +181,56 @@
     <Resource Include="Img\Hogares.jpg" />
     <Resource Include="Img\Lealtad.png" />
     <Resource Include="Img\Viking.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\comidas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Casa.jpg" />
+    <Resource Include="Img\choza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Casa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="comidas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="choza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Mansion.jpg" />
+    <Resource Include="Img\MansionPiedra.jpg" />
+    <Resource Include="Img\pequeñaCasa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pequeñaCasa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mansion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MansionPiedra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Festin.jpg" />
+    <Resource Include="Img\Pescado.jpg" />
+    <Resource Include="Img\Pollo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pescado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pollo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Festin.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

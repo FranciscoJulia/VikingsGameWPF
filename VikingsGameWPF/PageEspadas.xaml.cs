@@ -40,19 +40,19 @@ namespace VikingsGameWPF
         {
             ImageBrush newImageBrush = new ImageBrush();
 
-            if (player.EscudoMadera == true)
+            if (player.EspadaBronce == true)
             {
-                newImageBrush.ImageSource = new BitmapImage(new Uri("Img/normalAxe.png", UriKind.Relative));
+                newImageBrush.ImageSource = new BitmapImage(new Uri("Img/espadaBronce.png", UriKind.Relative));
                 rImgEspadaActual.Fill = newImageBrush;
             }
-            else if (player.EscudoReforzado == true)
+            else if (player.EspadaHierro == true)
             {
-                newImageBrush.ImageSource = new BitmapImage(new Uri("Img/hachaPico.png", UriKind.Relative));
+                newImageBrush.ImageSource = new BitmapImage(new Uri("Img/espadaHierro.png", UriKind.Relative));
                 rImgEspadaActual.Fill = newImageBrush;
             }
-            else if (player.EscudoUltimum == true)
+            else if (player.EspadaAcero == true)
             {
-                newImageBrush.ImageSource = new BitmapImage(new Uri("Img/doubleAxe.png", UriKind.Relative));
+                newImageBrush.ImageSource = new BitmapImage(new Uri("Img/espadaAcero.png", UriKind.Relative));
                 rImgEspadaActual.Fill = newImageBrush;
             }
         }

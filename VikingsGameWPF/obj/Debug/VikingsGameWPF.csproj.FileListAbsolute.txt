@@ -27,3 +27,7 @@ C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageEspadas.g.c
 C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageEspadas.baml
 C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageEscudos.g.cs
 C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageEscudos.baml
+C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageCasas.g.cs
+C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageComidas.g.cs
+C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageCasas.baml
+C:\Users\Usuario\Desktop\VikingsGameWPF\VikingsGameWPF\obj\Debug\PageComidas.baml

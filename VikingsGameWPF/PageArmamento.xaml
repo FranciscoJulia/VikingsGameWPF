@@ -27,6 +27,9 @@
             </Rectangle.Fill>
         </Rectangle>
         <Frame x:Name="FrameArmamento" Content="" HorizontalAlignment="Left" Height="440" Margin="50,316,0,0" VerticalAlignment="Top" Width="649"/>
+        <Label Content="HACHAS" HorizontalAlignment="Left" Margin="64,18,0,0" VerticalAlignment="Top" Height="58" Width="190" FontFamily="Perpetua" FontSize="48"/>
+        <Label Content="ESPADAS" HorizontalAlignment="Left" Margin="276,16,0,0" VerticalAlignment="Top" Height="59" Width="204" FontFamily="Perpetua" FontSize="48"/>
+        <Label Content="ESCUDOS" HorizontalAlignment="Left" Margin="489,16,0,0" VerticalAlignment="Top" Height="59" Width="204" FontFamily="Perpetua" FontSize="48"/>
 
     </Grid>
 </Page>
