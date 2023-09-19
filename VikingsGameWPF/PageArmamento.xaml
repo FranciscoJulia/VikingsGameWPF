@@ -1,0 +1,32 @@
+﻿<Page x:Class="VikingsGameWPF.PageArmamento"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VikingsGameWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="726"
+      
+      Title="PageArmamento">
+
+    <Grid>
+        <Rectangle x:Name="rImgHachas" HorizontalAlignment="Left" Height="198" Margin="50,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="204" MouseDown="rImgHachas_MouseDown" MouseEnter="rImgHachas_MouseEnter" MouseLeave="rImgHachas_MouseLeave">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Img/Hachasbtn.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="800" Stroke="Black" VerticalAlignment="Center" Width="24" Fill="#FF6B5145"/>
+        <Rectangle x:Name="rImgEspadas" HorizontalAlignment="Left" Height="198" Margin="270,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="205" MouseDown="rImgEspadas_MouseDown" MouseEnter="rImgEspadas_MouseEnter" MouseLeave="rImgEspadas_MouseLeave">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Img/Espadasbtn.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="rImgEscudos" HorizontalAlignment="Left" Height="198" Margin="490,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="205" MouseDown="rImgEscudos_MouseDown" MouseEnter="rImgEscudos_MouseEnter" MouseLeave="rImgEscudos_MouseLeave">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Img/Escudosbtn.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Frame x:Name="FrameArmamento" Content="" HorizontalAlignment="Left" Height="440" Margin="50,316,0,0" VerticalAlignment="Top" Width="649"/>
+
+    </Grid>
+</Page>
