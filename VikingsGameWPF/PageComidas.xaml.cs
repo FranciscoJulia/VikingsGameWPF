@@ -20,10 +20,10 @@ namespace VikingsGameWPF
     /// </summary>
     public partial class PageComidas : Page
     {
-        Item pan = new Item("Pan", 5, "Pan duro", 6, 7);
-        Item pescado = new Item("Pescado", 6, "Salmoncito", 7, 8);
-        Item pollo = new Item("Pollo", 7, "Pollo", 8, 9);
-        Item Festin = new Item("Festín", 8, "Chancho con otras cosas", 9, 10);
+        Item pan = new Item("Pan", 0, "Pan duro", 5);
+        Item pescado = new Item("Pescado", 70, "Salmoncito", 25);
+        Item pollo = new Item("Pollo", 120, "Pollo", 60);
+        Item Festin = new Item("Festín", 250, "Chancho con otras cosas", 150);
 
 
         VikingPlayer player;
@@ -64,10 +64,11 @@ namespace VikingsGameWPF
 
         public void ComidaPan()
         {
-            lblNombreEscudo.Content = pan.Nombre;
+            lblNombreComida.Content = pan.Nombre;
             lblPrecio.Content = $"- {pan.Precio} x Día";
             lblExp.Content = $"+ {pan.XP} x Día";
-            lblLealtad.Content = $"+ {pan.Lealtad} x Dia";
+            lblLealtad.Content = $"+ {pan.Lealtad} x Día";
+            lblVida.Content = $"+ {pan.SVida} x Día";
 
             rImgPan.StrokeThickness = 3;
             rImgPescado.StrokeThickness = 1;
@@ -81,10 +82,11 @@ namespace VikingsGameWPF
         }
         private void rImgPescado_MouseEnter(object sender, MouseEventArgs e)
         {
-            lblNombreEscudo.Content = pescado.Nombre;
+            lblNombreComida.Content = pescado.Nombre;
             lblPrecio.Content = $"- {pescado.Precio} x Día";
             lblExp.Content = $"+ {pescado.XP} x Día";
-            lblLealtad.Content = $"+ {pescado.Lealtad} x Dia";
+            lblLealtad.Content = $"+ {pescado.Lealtad} x Día";
+            lblVida.Content = $"+ {pescado.SVida} x Día";
 
             rImgPan.StrokeThickness = 1;
             rImgPescado.StrokeThickness = 3;
@@ -93,10 +95,11 @@ namespace VikingsGameWPF
         }
         private void rImgPollo_MouseEnter(object sender, MouseEventArgs e)
         {
-            lblNombreEscudo.Content = pollo.Nombre;
+            lblNombreComida.Content = pollo.Nombre;
             lblPrecio.Content = $"- {pollo.Precio} x Día";
             lblExp.Content = $"+ {pollo.XP} x Día";
-            lblLealtad.Content = $"+ {pollo.Lealtad} x Dia";
+            lblLealtad.Content = $"+ {pollo.Lealtad} x Día";
+            lblVida.Content = $"+ {pollo.SVida} x Día";
 
             rImgPan.StrokeThickness = 1;
             rImgPescado.StrokeThickness = 1;
@@ -105,20 +108,60 @@ namespace VikingsGameWPF
         }
         private void rImgFestin_MouseEnter(object sender, MouseEventArgs e)
         {
-            lblNombreEscudo.Content = Festin.Nombre;
+            lblNombreComida.Content = Festin.Nombre;
             lblPrecio.Content = $"- {Festin.Precio} x Día";
             lblExp.Content = $"+ {Festin.XP} x Día";
-            lblLealtad.Content = $"+ {Festin.Lealtad} x Dia";
+            lblLealtad.Content = $"+ {Festin.Lealtad} x Día";
+            lblVida.Content = $"+ {Festin.SVida} x Día";
 
             rImgPan.StrokeThickness = 1;
             rImgPescado.StrokeThickness = 1;
             rImgPollo.StrokeThickness = 1;
             rImgFestin.StrokeThickness = 3;
         }
-
+        
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
+            if (lblNombreComida.Content.ToString() == pan.Nombre)
+            {
+                if (player.Monedas >= pan.Precio)
+                {
+                    ComidaUsada();
+                }
+                else MessageBox.Show("No tienes suficientes monedas...");
+            }
+            else if (lblNombreComida.Content.ToString() == pescado.Nombre)
+            {
+                if (player.Monedas >= pescado.Precio)
+                {
+                    ComidaUsada();
+                }
+                else MessageBox.Show("No tienes suficientes monedas...");
+            }
+            else if (lblNombreComida.Content.ToString() == pollo.Nombre)
+            {
+                if (player.Monedas >= pollo.Precio)
+                {
+                    ComidaUsada();
+                }
+                else MessageBox.Show("No tienes suficientes monedas...");
+            }
+            else if (lblNombreComida.Content.ToString() == Festin.Nombre)
+            {
+                if (player.Monedas >= Festin.Precio)
+                {
+                    ComidaUsada();
+                }
+                else MessageBox.Show("No tienes suficientes monedas...");
+            }
+        }
 
+        public void ComidaUsada()
+        {
+            if (lblNombreComida.Content.ToString() == pan.Nombre) player.ComidaPan = true;
+            if (lblNombreComida.Content.ToString() == pescado.Nombre) player.ComidaPescado = true;
+            if (lblNombreComida.Content.ToString() == pollo.Nombre) player.ComidaPollo = true;
+            if (lblNombreComida.Content.ToString() == Festin.Nombre) player.ComidaFestin = true;
         }
     }
 }

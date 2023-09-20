@@ -33,20 +33,22 @@
         <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,0,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="-7,0,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,417,0,0"/>
-        <Label x:Name="lblNombreEscudo" Content="Label" HorizontalAlignment="Left" Height="50" Margin="404,84,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Label x:Name="lblNombreComida" Content="Label" HorizontalAlignment="Left" Height="50" Margin="404,84,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
         <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="428,22,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
-        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="404,132,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="470,132,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="404,170,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="454,170,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="33" Margin="404,208,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="482,208,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="404,127,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="470,127,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="404,157,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="454,157,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="34" Margin="404,186,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="34" Margin="481,186,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
         <Label x:Name="lblActual" Content="Comida actual" HorizontalAlignment="Left" Height="56" Margin="15,40,0,0" VerticalAlignment="Top" Width="206" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
         <Rectangle x:Name="rImgFestin" HorizontalAlignment="Left" Height="148" Margin="480,280,0,0" Stroke="Black" VerticalAlignment="Top" Width="153" MouseEnter="rImgFestin_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Festin.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Label x:Name="labelVida" Content="Vida:" HorizontalAlignment="Left" Height="50" Margin="404,217,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="36"/>
+        <Label x:Name="lblVida" Content="xxxx" HorizontalAlignment="Left" Height="48" Margin="482,219,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="36"/>
 
     </Grid>
 </Page>

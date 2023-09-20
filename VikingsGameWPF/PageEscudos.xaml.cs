@@ -20,9 +20,9 @@ namespace VikingsGameWPF
     /// </summary>
     public partial class PageEscudos : Page
     {
-        Item escudoMadera = new Item("Escudo de madera", 5, "Escudo de madera", 6, 7);
-        Item escudoReforzado = new Item("Escudo reforzado", 6, "Escudo reforzado", 7, 8);
-        Item escudoUltimum = new Item("Escudo Ultimum", 7, "Escudo Legendario", 8, 9);
+        Item escudoMadera = new Item("Escudo de madera", 0, "Escudo de madera", 1, 10, 0, 0);
+        Item escudoReforzado = new Item("Escudo reforzado", 40, "Escudo reforzado", 20, 30, 0, 0);
+        Item escudoUltimum = new Item("Escudo Ultimum", 100, "Escudo Legendario", 45, 100, 0, 0);
 
         VikingPlayer player;
 

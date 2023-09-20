@@ -31,11 +31,10 @@ namespace VikingsGameWPF
             Datos();
 
 
-            //SACAR BORDES BOTONES
-            rImgMonedas.StrokeThickness = 0;
-            rImgXP.StrokeThickness = 0;
-            rImgLealtad.StrokeThickness = 0;
+            
         }
+
+        
 
 
 
@@ -44,12 +43,22 @@ namespace VikingsGameWPF
 
         public void Datos()
         {
+            SRVIDA();
+
             player.Nombre = nombrePlayer;
             lblNombre.Content = player.Nombre.ToString();
             lblMonedas.Content = player.Monedas.ToString();
             lblXP.Content = player.Experiencia.ToString();
-            lblLealtad.Content = player.Lealtad.ToString(); 
+            lblLealtad.Content = player.Poder.ToString(); 
             lblTipo.Content = player.Tipo.ToString();
+            lblDias.Content = $"Día {player.Dia}";
+            lblVida.Content = player.Vida.ToString();
+
+            lblVidaSuma.Content = player.sumaVida.ToString();
+            //lblVidaResta.Content = player.restaVida.ToString();
+
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -83,33 +92,28 @@ namespace VikingsGameWPF
         private void rImgAlimento_MouseEnter(object sender, MouseEventArgs e)
         {
             rImgAlimento.StrokeThickness = 6;
-            lblAlimento.FontSize = 50;
+            lblAlimento.FontSize = 48;
+            lblHogar.FontSize = 48;
         }
         private void rImgAlimento_MouseLeave(object sender, MouseEventArgs e)
         {
             rImgAlimento.StrokeThickness = 1;
-            lblAlimento.FontSize = 48;
+            lblAlimento.FontSize = 46;
+            lblHogar.FontSize = 46;
         }
 
-        //HOGAR
-        private void rImgHogar_MouseDown(object sender, MouseButtonEventArgs e)
+
+
+        private void btnDormir_Click(object sender, RoutedEventArgs e)
         {
-            MyFrame.NavigationService.Navigate(new PageHogar());    
+            player.Dia++;
+            Datos();
         }
-        private void rImgHogar_MouseEnter(object sender, MouseEventArgs e)
+        public void SRVIDA()
         {
-            rImgHogar.StrokeThickness = 6;
-            lblHogar.FontSize = 50;
+            player.SumaVidaElementos();
+            player.SumaVida();
+            player.RestaVida();
         }
-        private void rImgHogar_MouseLeave(object sender, MouseEventArgs e)
-        {
-            rImgHogar.StrokeThickness = 1;
-            lblHogar.FontSize = 48;
-        }
-
-
-
-        
-
     }
 }

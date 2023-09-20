@@ -77,9 +77,6 @@
     <Compile Include="PageHachas.xaml.cs">
       <DependentUpon>PageHachas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageHogar.xaml.cs">
-      <DependentUpon>PageHogar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="VikingPlayer.cs" />
     <Page Include="Game.xaml">
       <SubType>Designer</SubType>
@@ -125,10 +122,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageHachas.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PageHogar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -231,6 +224,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Festin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Corazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Corazon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

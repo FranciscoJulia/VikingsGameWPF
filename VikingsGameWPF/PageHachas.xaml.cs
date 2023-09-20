@@ -21,9 +21,9 @@ namespace VikingsGameWPF
     public partial class PageHachas : Page
     {
 
-        Item hachaNormal = new Item("Hacha", 5, "Hacha normal", 5, 5);
-        Item hachaPico = new Item("Hacha pico", 6, "Hacha y pico a la vez", 6, 6);
-        Item hachaDoble = new Item("Hacha doble", 7, "Hacha por ambos lados", 7, 7);
+        Item hachaNormal = new Item("Hacha", 0, "Hacha normal", 1, 10, 0, 0);
+        Item hachaPico = new Item("Hacha pico", 40, "Hacha y pico a la vez", 20, 30, 0, 0);
+        Item hachaDoble = new Item("Hacha doble", 100, "Hacha por ambos lados", 45, 100, 0, 0);
 
 
 

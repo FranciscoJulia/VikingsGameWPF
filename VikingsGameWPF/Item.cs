@@ -10,14 +10,45 @@ namespace VikingsGameWPF
 {
     internal class Item
     {
-		public Item(string nombre, int precio, string descripcion, int xp, int lealtad)
+       //CONSTRUCTOR GENERAL
+        public Item(string nombre, int precio, string descripcion, int xp, int lealtad, int svida, int rvida)
 		{
 			this.nombre = nombre;
 			this.precio = precio;
 			this.descripcion = descripcion;
 			this.xp = xp;
 			this.lealtad = lealtad;
+			this.sVida = svida;
+			this.rVida = rvida;
 		}
+
+		//CONSTRUCTOR COMIDAS
+		public Item(string nombre, int precio, string descripcion, int svida)
+		{
+			this.nombre = nombre;
+			this.precio = precio;
+			this.descripcion = descripcion;
+			this.sVida = svida;
+		}
+
+		//CONSTRUCTOR CASAS
+		private int reservaVida;
+
+		public int ReservaVida
+		{
+			get { return reservaVida; }
+			set { reservaVida = value; }
+		}	
+
+		public Item(string nombre, int precio, string descripcion, int xp, int reservaVida)
+		{
+            this.nombre = nombre;
+            this.precio = precio;
+            this.descripcion = descripcion;
+			this.xp = xp;
+			this.reservaVida = reservaVida;
+        }
+
 
 
 
@@ -57,11 +88,24 @@ namespace VikingsGameWPF
 		{
 			get { return descripcion; }
 			set { descripcion = value; }
-		}	
+		}
+		private int sVida;	
+		public int SVida
+		{
+			get { return sVida; }
+			set { sVida = value; }
+		}
+        private int rVida;
+        public int RVida
+        {
+            get { return rVida; }
+            set { rVida = value; }
+        }
 
 
 
 
 
-	}
+
+    }
 }

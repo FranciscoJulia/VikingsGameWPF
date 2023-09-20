@@ -20,9 +20,9 @@ namespace VikingsGameWPF
     /// </summary>
     public partial class PageEspadas : Page
     {
-        Item espadaBronce = new Item("Espada de bronce", 5, "Espada de bronce",6,7);
-        Item espadaHierro = new Item("Espada de Hierro", 6, "Espada de Hierro", 7, 8);
-        Item espadaAcero = new Item("Espada de Acero", 7, "Espada de Acero", 8, 9);
+        Item espadaBronce = new Item("Espada de bronce", 0, "Espada de bronce", 1, 10, 0, 0);
+        Item espadaHierro = new Item("Espada de Hierro", 40, "Espada de Hierro", 20, 30, 0, 0);
+        Item espadaAcero = new Item("Espada de Acero", 100, "Espada de Acero", 45, 100, 0, 0);
 
         VikingPlayer player;
 
