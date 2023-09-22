@@ -77,6 +77,9 @@
     <Compile Include="PageHachas.xaml.cs">
       <DependentUpon>PageHachas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageSRElementos.xaml.cs">
+      <DependentUpon>PageSRElementos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VikingPlayer.cs" />
     <Page Include="Game.xaml">
       <SubType>Designer</SubType>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageHachas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageSRElementos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +237,26 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Corazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sonidos\CambiarSeleccion.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\CambiarSeleccion.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\clickBotones.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\clickBotones.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\ClickSi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\ClickSi.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

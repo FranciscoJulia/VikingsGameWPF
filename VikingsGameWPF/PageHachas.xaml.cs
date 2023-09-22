@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,6 +37,9 @@ namespace VikingsGameWPF
             this.player = player;
 
             HachaActual();
+
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
         }
 
         public void HachaActual()
@@ -59,7 +63,21 @@ namespace VikingsGameWPF
             }
         }
 
-
+        public void SonidoCambiarSeleccion()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/CambiarSeleccion.wav");
+            sonido.Play();
+        }
+        public void SonidoClickNo()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/clickBotones.wav");
+            sonido.Play();
+        }
+        public void SonidoClickSi()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/ClickSi.wav");
+            sonido.Play();
+        }
 
 
         //HACHA NORMAL
@@ -68,12 +86,14 @@ namespace VikingsGameWPF
             lblNombreHacha.Content = hachaNormal.Nombre;
             lblPrecio.Content = $"- {hachaNormal.Precio} x Día";
             lblExp.Content = $"+ {hachaNormal.XP} x Día";
-            lblLealtad.Content = $"+ {hachaNormal.Lealtad} x Dia";
+            lblPoder.Content = $"+ {hachaNormal.Poder}";
             MostrarElementos();
             rImgHachaPico.StrokeThickness = 1;
             rImgHachaNormal.StrokeThickness = 3;
             rImgHachaDoble.StrokeThickness = 1;
         }
+
+        private string hachaActual;
         private void rImgHachaNormal_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //lblNombreHacha.Content = hachaNormal.Nombre;
@@ -83,6 +103,12 @@ namespace VikingsGameWPF
         }
         private void rImgHachaNormal_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreHacha.Content.ToString() != hachaNormal.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            hachaActual = hachaNormal.Nombre;
+
             HachaNormal();
         }
         private void rImgHachaNormal_MouseLeave(object sender, MouseEventArgs e)
@@ -100,10 +126,16 @@ namespace VikingsGameWPF
         }
         private void rImgHachaPico_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreHacha.Content.ToString() != hachaPico.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            hachaActual = hachaPico.Nombre;
+
             lblNombreHacha.Content = hachaPico.Nombre;
             lblPrecio.Content = $"- {hachaPico.Precio} x Día";
             lblExp.Content = $"+ {hachaPico.XP} x Día";
-            lblLealtad.Content = $"+ {hachaPico.Lealtad} x Dia";
+            lblPoder.Content = $"+ {hachaPico.Poder}";
             MostrarElementos();
             rImgHachaPico.StrokeThickness = 3;
             rImgHachaNormal.StrokeThickness = 1;
@@ -125,10 +157,16 @@ namespace VikingsGameWPF
         }
         private void rImgHachaDoble_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreHacha.Content.ToString() != hachaDoble.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            hachaActual = hachaDoble.Nombre;
+
             lblNombreHacha.Content = hachaDoble.Nombre;
             lblPrecio.Content = $"- {hachaDoble.Precio} x Día";
             lblExp.Content = $"+ {hachaDoble.XP} x Día";
-            lblLealtad.Content = $"+ {hachaDoble.Lealtad} x Dia";
+            lblPoder.Content = $"+ {hachaDoble.Poder}";
             MostrarElementos();
             rImgHachaPico.StrokeThickness = 1;
             rImgHachaNormal.StrokeThickness = 1;
@@ -153,15 +191,23 @@ namespace VikingsGameWPF
 
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-            if (lblNombreHacha.Content.ToString() == hachaNormal.Nombre)
+            if (lblNombreHacha.Content.ToString() == hachaActual)
+            {
+                SonidoClickNo();
+            }
+            else if (lblNombreHacha.Content.ToString() == hachaNormal.Nombre)
             {
                 if (player.Monedas >= hachaNormal.Precio)
                 {
                     player.HachaNormal = true;
                     player.HachaPico = false;
                     player.HachaDoble = false;
+
+                    SonidoClickSi();
+
+                    HachaActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreHacha.Content.ToString() == hachaPico.Nombre)
             {
@@ -170,8 +216,12 @@ namespace VikingsGameWPF
                     player.HachaNormal = false;
                     player.HachaPico = true;
                     player.HachaDoble = false;
+
+                    SonidoClickSi();
+
+                    HachaActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreHacha.Content.ToString() == hachaDoble.Nombre)
             {
@@ -180,9 +230,18 @@ namespace VikingsGameWPF
                     player.HachaNormal = false;
                     player.HachaPico = false;
                     player.HachaDoble = true;
+
+                    SonidoClickSi();
+
+                    HachaActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
+
+
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
+
         }
     }
 }

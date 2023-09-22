@@ -5,23 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VikingsGameWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="726"
+      d:DesignHeight="800" d:DesignWidth="1037"
       Title="PageAlimento">
 
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="800" Stroke="Black" VerticalAlignment="Center" Width="24" Fill="#FF6B5145"/>
-        <Rectangle x:Name="rImgHogares" HorizontalAlignment="Left" Height="198" Margin="50,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="204" MouseDown="rImgHogares_MouseDown" MouseEnter="rImgHogares_MouseEnter" MouseLeave="rImgHogares_MouseLeave">
+        <Rectangle HorizontalAlignment="Left" Height="800" Stroke="Black" VerticalAlignment="Center" Width="24" Fill="#FF6B5145" Margin="322,0,0,0"/>
+        <Rectangle x:Name="rImgHogares" HorizontalAlignment="Left" Height="198" Margin="372,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="204" MouseDown="rImgHogares_MouseDown" MouseEnter="rImgHogares_MouseEnter" MouseLeave="rImgHogares_MouseLeave">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Casa.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgAlimento" HorizontalAlignment="Left" Height="198" Margin="270,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="205" MouseDown="rImgAlimento_MouseDown" MouseEnter="rImgAlimento_MouseEnter" MouseLeave="rImgAlimento_MouseLeave">
+        <Rectangle x:Name="rImgAlimento" HorizontalAlignment="Left" Height="198" Margin="592,80,0,0" Stroke="Black" VerticalAlignment="Top" Width="205" MouseDown="rImgAlimento_MouseDown" MouseEnter="rImgAlimento_MouseEnter" MouseLeave="rImgAlimento_MouseLeave">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/comidas.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Frame x:Name="FrameArmamento" Content="" HorizontalAlignment="Left" Height="440" Margin="50,316,0,0" VerticalAlignment="Top" Width="649"/>
-        <Label Content="HOGAR" HorizontalAlignment="Left" Margin="64,18,0,0" VerticalAlignment="Top" Height="58" Width="190" FontFamily="Perpetua" FontSize="48"/>
-        <Label Content="COMIDAS" HorizontalAlignment="Left" Margin="268,16,0,0" VerticalAlignment="Top" Height="59" Width="204" FontFamily="Perpetua" FontSize="48"/>
+        <Frame x:Name="FrameArmamento" Content="" HorizontalAlignment="Left" Height="440" Margin="0,316,0,0" VerticalAlignment="Top" Width="1021"/>
+        <Label Content="HOGAR" HorizontalAlignment="Left" Margin="386,18,0,0" VerticalAlignment="Top" Height="58" Width="190" FontFamily="Perpetua" FontSize="48"/>
+        <Label Content="COMIDAS" HorizontalAlignment="Left" Margin="590,16,0,0" VerticalAlignment="Top" Height="59" Width="204" FontFamily="Perpetua" FontSize="48"/>
     </Grid>
 </Page>

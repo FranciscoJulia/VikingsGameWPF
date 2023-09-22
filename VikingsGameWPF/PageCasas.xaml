@@ -5,48 +5,61 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VikingsGameWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="440" d:DesignWidth="645"
+      d:DesignHeight="440" d:DesignWidth="1023"
       Title="PageCasas">
 
     <Grid>
-        <Rectangle x:Name="rImgEscudoActual" HorizontalAlignment="Left" Height="158" Margin="30,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
+        <Rectangle x:Name="rImgEscudoActual" HorizontalAlignment="Left" Height="158" Margin="394,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Casa.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgChoza" HorizontalAlignment="Center" Height="131" Margin="0,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgChoza_MouseEnter">
+        <Rectangle x:Name="rImgChoza" HorizontalAlignment="Left" Height="131" Margin="614,19,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgChoza_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/choza.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgCasaPequeña" HorizontalAlignment="Center" Height="130" Stroke="Black" VerticalAlignment="Center" Width="135" MouseEnter="rImgCasaPequeña_MouseEnter">
+        <Rectangle x:Name="rImgCasaPequeña" HorizontalAlignment="Left" Height="130" Stroke="Black" VerticalAlignment="Center" Width="135" MouseEnter="rImgCasaPequeña_MouseEnter" Margin="614,0,0,0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/pequeñaCasa.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgMansion" HorizontalAlignment="Center" Height="131" Margin="0,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgMansion_MouseEnter">
+        <Rectangle x:Name="rImgMansion" HorizontalAlignment="Left" Height="132" Margin="614,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgMansion_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Mansion.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="212,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="-7,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,417,0,0"/>
-        <Label x:Name="lblNombreCasa" Content="Label" HorizontalAlignment="Left" Height="50" Margin="404,84,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="428,22,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
-        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="404,132,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="470,132,0,0" VerticalAlignment="Top" Width="165" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="404,170,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="454,170,0,0" VerticalAlignment="Top" Width="181" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelReservaVida" Content="Reserva:" HorizontalAlignment="Left" Height="33" Margin="404,208,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblReservaVida" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="487,208,0,0" VerticalAlignment="Top" Width="185" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblActual" Content="Hogar actual" HorizontalAlignment="Left" Height="56" Margin="19,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Rectangle x:Name="rImgMansionPiedra" HorizontalAlignment="Left" Height="148" Margin="480,280,0,0" Stroke="Black" VerticalAlignment="Top" Width="153" MouseEnter="rImgMansionPiedra_MouseEnter">
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="576,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="374,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="357,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="374,417,0,0"/>
+        <Label x:Name="lblNombreCasa" Content="Label" HorizontalAlignment="Left" Height="50" Margin="764,80,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="44" Margin="764,18,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
+        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="818,132,0,0" VerticalAlignment="Top" Width="165" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="816,181,0,0" VerticalAlignment="Top" Width="181" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblReservaVida" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="816,232,0,0" VerticalAlignment="Top" Width="185" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblActual" Content="Hogar actual" HorizontalAlignment="Left" Height="56" Margin="383,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Rectangle x:Name="rImgMansionPiedra" HorizontalAlignment="Left" Height="148" Margin="860,282,0,0" Stroke="Black" VerticalAlignment="Top" Width="153" MouseEnter="rImgMansionPiedra_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/MansionPiedra.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Rectangle x:Name="rImgMonedas" HorizontalAlignment="Left" Height="36" Margin="768,134,0,0" VerticalAlignment="Top" Width="36">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Img/Coin.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="rImgCorazon" HorizontalAlignment="Left" Height="36" Margin="769,234,0,0" VerticalAlignment="Top" Width="36">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Corazon.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="rImgXP" HorizontalAlignment="Left" Height="43" Margin="766,177,0,0" VerticalAlignment="Top" Width="43" RadiusX="25" RadiusY="25">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Img/estrellaXP.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Frame x:Name="FrameSR" Content="Frame" HorizontalAlignment="Left" Height="273" Margin="20,147,0,0" VerticalAlignment="Top" Width="297"/>
 
     </Grid>
 </Page>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace VikingsGameWPF
 {
@@ -23,12 +24,17 @@ namespace VikingsGameWPF
         string nombrePlayer;
         public Game(string nombre)
         {
+
             nombrePlayer = nombre;
             InitializeComponent();
 
             MyFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            MyFrame.NavigationService.Navigate(new PageArmamento(player));
+            rImgArmamento.StrokeThickness = 6;
+            lblArmamento.FontSize = 50;
 
             Datos();
+
 
 
             
@@ -43,33 +49,42 @@ namespace VikingsGameWPF
 
         public void Datos()
         {
-            SRVIDA();
+            
+            
 
             player.Nombre = nombrePlayer;
             lblNombre.Content = player.Nombre.ToString();
             lblMonedas.Content = player.Monedas.ToString();
             lblXP.Content = player.Experiencia.ToString();
-            lblLealtad.Content = player.Poder.ToString(); 
+            lblPoder.Content = player.Poder.ToString(); 
             lblTipo.Content = player.Tipo.ToString();
             lblDias.Content = $"Día {player.Dia}";
             lblVida.Content = player.Vida.ToString();
 
-            lblVidaSuma.Content = player.sumaVida.ToString();
-            //lblVidaResta.Content = player.restaVida.ToString();
+            player.CantPoder();
+            lblPoder.Content = player.cantPoder.ToString();
 
-
-
+            
+            
         }
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+        public void SonidoClickSi()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/ClickSi.wav");
+            sonido.Play();
+        }
 
         //ARMAMENTO
         private void rImgArmamento_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SonidoClickSi();
             MyFrame.NavigationService.Navigate(new PageArmamento(player));
         }
         private void rImgArmamento_MouseEnter(object sender, MouseEventArgs e)
@@ -87,6 +102,7 @@ namespace VikingsGameWPF
         //ALIMENTO
         private void rImgAlimento_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SonidoClickSi();
             MyFrame.NavigationService.Navigate(new PageAlimento(player));
         }
         private void rImgAlimento_MouseEnter(object sender, MouseEventArgs e)
@@ -102,18 +118,22 @@ namespace VikingsGameWPF
             lblHogar.FontSize = 46;
         }
 
+        
 
 
         private void btnDormir_Click(object sender, RoutedEventArgs e)
         {
+            player.SumaExp();
+            player.SumaVida();
+
             player.Dia++;
             Datos();
         }
-        public void SRVIDA()
+        
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            player.SumaVidaElementos();
-            player.SumaVida();
-            player.RestaVida();
+            if (e.LeftButton == MouseButtonState.Pressed) DragMove();
         }
     }
 }

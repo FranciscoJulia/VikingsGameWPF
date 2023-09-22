@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,12 +33,13 @@ namespace VikingsGameWPF
             InitializeComponent();
             EscudoMadera();
             this.player = player;
-
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
 
             EscudoActual();
         }
 
-
+        private string escudoActual = "Escudo de madera";
         public void EscudoActual()
         {
             ImageBrush newImageBrush = new ImageBrush();
@@ -58,12 +61,28 @@ namespace VikingsGameWPF
             }
         }
 
+        public void SonidoCambiarSeleccion()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/CambiarSeleccion.wav");
+            sonido.Play();
+        }
+        public void SonidoClickNo()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/clickBotones.wav");
+            sonido.Play();
+        }
+        public void SonidoClickSi()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/ClickSi.wav");
+            sonido.Play();
+        }
+
         public void EscudoMadera()
         {
             lblNombreEscudo.Content = escudoMadera.Nombre;
             lblPrecio.Content = $"- {escudoMadera.Precio} x Día";
             lblExp.Content = $"+ {escudoMadera.XP} x Día";
-            lblLealtad.Content = $"+ {escudoMadera.Lealtad} x Dia";
+            lblPoder.Content = $"+ {escudoMadera.Poder}";
             MostrarElementos();
             rImgEscudoMadera.StrokeThickness = 3;
             rImgEscudoReforzado.StrokeThickness = 1;
@@ -81,15 +100,26 @@ namespace VikingsGameWPF
 
         private void rImgEscudoMadera_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreEscudo.Content.ToString() != escudoMadera.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            escudoActual = escudoMadera.Nombre;
             EscudoMadera();
         }
 
         private void rImgEscudoReforzado_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreEscudo.Content.ToString() != escudoReforzado.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            escudoActual = escudoReforzado.Nombre;
+
             lblNombreEscudo.Content = escudoReforzado.Nombre;
             lblPrecio.Content = $"- {escudoReforzado.Precio} x Día";
             lblExp.Content = $"+ {escudoReforzado.XP} x Día";
-            lblLealtad.Content = $"+ {escudoReforzado.Lealtad} x Dia";
+            lblPoder.Content = $"+ {escudoReforzado.Poder}";
             MostrarElementos();
             rImgEscudoMadera.StrokeThickness = 1;
             rImgEscudoReforzado.StrokeThickness = 3;
@@ -98,36 +128,58 @@ namespace VikingsGameWPF
 
         private void rImgEscudoUltimum_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreEscudo.Content.ToString() != escudoUltimum.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            escudoActual = escudoUltimum.Nombre;
+
             lblNombreEscudo.Content = escudoUltimum.Nombre;
             lblPrecio.Content = $"- {escudoUltimum.Precio} x Día";
             lblExp.Content = $"+ {escudoUltimum.XP} x Día";
-            lblLealtad.Content = $"+ {escudoUltimum.Lealtad} x Dia";
+            lblPoder.Content = $"+ {escudoUltimum.Poder}";
             MostrarElementos();
             rImgEscudoMadera.StrokeThickness = 1;
             rImgEscudoReforzado.StrokeThickness = 1;
             rImgEscudoUltimum.StrokeThickness = 3;
+
+        
+
         }
 
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-            if(lblNombreEscudo.Content.ToString() == escudoMadera.Nombre)
+            if (lblNombreEscudo.Content.ToString() == escudoActual)
+            {
+                SonidoClickNo();
+            }
+            else if (lblNombreEscudo.Content.ToString() == escudoMadera.Nombre)
             {
                 if (player.Monedas >= escudoMadera.Precio)
                 {
                     player.EscudoMadera = true;
                     player.EscudoReforzado = false;
                     player.EscudoUltimum = false;
+
+                    SonidoClickSi();
+
+                    EscudoActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
-            }else if (lblNombreEscudo.Content.ToString() == escudoReforzado.Nombre)
+                else SonidoClickNo();
+            }
+            else if (lblNombreEscudo.Content.ToString() == escudoReforzado.Nombre)
             {
                 if(player.Monedas >= escudoReforzado.Precio)
                 {
                     player.EscudoMadera = false;
                     player.EscudoReforzado = true;
                     player.EscudoUltimum = false;
+
+                    SonidoClickSi();
+
+                    EscudoActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreEscudo.Content.ToString() == escudoUltimum.Nombre)
             {
@@ -136,9 +188,17 @@ namespace VikingsGameWPF
                     player.EscudoMadera = false;
                     player.EscudoReforzado = false;
                     player.EscudoUltimum = true;
+
+                    SonidoClickSi();
+
+                    EscudoActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
+
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
+
         }
     }
 }

@@ -5,43 +5,44 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VikingsGameWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="440" d:DesignWidth="645"
+      d:DesignHeight="440" d:DesignWidth="1023"
       Title="PageHachas">
 
     <Grid>
-        <Rectangle x:Name="rImgHachaActual" HorizontalAlignment="Left" Height="158" Margin="30,95,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
+        <Rectangle x:Name="rImgHachaActual" HorizontalAlignment="Left" Height="158" Margin="395,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/Hachasbtn.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgHachaNormal" HorizontalAlignment="Left" Height="131" Margin="274,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaNormal_MouseDown" MouseEnter="rImgHachaNormal_MouseEnter" MouseLeave="rImgHachaNormal_MouseLeave">
+        <Rectangle x:Name="rImgHachaNormal" HorizontalAlignment="Left" Height="131" Margin="614,21,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaNormal_MouseDown" MouseEnter="rImgHachaNormal_MouseEnter" MouseLeave="rImgHachaNormal_MouseLeave">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/normalAxe.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgHachaPico" HorizontalAlignment="Left" Height="130" Margin="274,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="135" MouseDown="rImgHachaPico_MouseDown" MouseEnter="rImgHachaPico_MouseEnter" MouseLeave="rImgHachaPico_MouseLeave">
+        <Rectangle x:Name="rImgHachaPico" HorizontalAlignment="Left" Height="130" Margin="614,158,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaPico_MouseDown" MouseEnter="rImgHachaPico_MouseEnter" MouseLeave="rImgHachaPico_MouseLeave">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/hachaPico.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgHachaDoble" HorizontalAlignment="Left" Height="131" Margin="274,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaDoble_MouseDown" MouseEnter="rImgHachaDoble_MouseEnter" MouseLeave="rImgHachaDoble_MouseLeave">
+        <Rectangle x:Name="rImgHachaDoble" HorizontalAlignment="Left" Height="131" Margin="614,293,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaDoble_MouseDown" MouseEnter="rImgHachaDoble_MouseEnter" MouseLeave="rImgHachaDoble_MouseLeave">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/doubleAxe.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="206,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="-7,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,417,0,0"/>
-        <Label x:Name="lblNombreHacha" Content="Label" HorizontalAlignment="Left" Height="50" Margin="438,84,0,0" VerticalAlignment="Top" Width="194" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="440,23,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
-        <Label x:Name="labelPrecio" Content="Precio:" HorizontalAlignment="Left" Height="33" Margin="438,132,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="508,132,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="438,170,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="487,170,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="33" Margin="438,208,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="515,208,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblActual" Content="Hacha actual" HorizontalAlignment="Left" Height="44" Margin="19,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Top" Width="22" Fill="#FF6B5145" Margin="571,3,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="375,3,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Top" Width="22" Fill="#FF6B5145" Margin="358,3,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="375,420,0,0"/>
+        <Label x:Name="lblNombreHacha" Content="Label" HorizontalAlignment="Left" Height="50" Margin="784,87,0,0" VerticalAlignment="Top" Width="229" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="782,20,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
+        <Label x:Name="labelPrecio" Content="Precio:" HorizontalAlignment="Left" Height="33" Margin="784,135,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="854,135,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="784,173,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="833,173,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelPoder" Content="Poder:" HorizontalAlignment="Left" Height="33" Margin="784,211,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblPoder" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="851,211,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblActual" Content="Hacha actual" HorizontalAlignment="Left" Height="44" Margin="384,43,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Frame x:Name="FrameSR" Content="Frame" HorizontalAlignment="Left" Height="273" Margin="21,147,0,0" VerticalAlignment="Top" Width="297"/>
 
     </Grid>
 </Page>

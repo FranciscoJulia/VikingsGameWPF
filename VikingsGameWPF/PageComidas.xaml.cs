@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,6 +35,9 @@ namespace VikingsGameWPF
 
             ComidaActual();
             ComidaPan();
+
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
         }
 
         public void ComidaActual()
@@ -61,44 +65,73 @@ namespace VikingsGameWPF
                 rImgEscudoActual.Fill = newImageBrush;
             }
         }
-
+        public void SonidoCambiarSeleccion()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/CambiarSeleccion.wav");
+            sonido.Play();
+        }
+        public void SonidoClickNo()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/clickBotones.wav");
+            sonido.Play();
+        }
+        public void SonidoClickSi()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/ClickSi.wav");
+            sonido.Play();
+        }
         public void ComidaPan()
         {
             lblNombreComida.Content = pan.Nombre;
             lblPrecio.Content = $"- {pan.Precio} x Día";
-            lblExp.Content = $"+ {pan.XP} x Día";
-            lblLealtad.Content = $"+ {pan.Lealtad} x Día";
             lblVida.Content = $"+ {pan.SVida} x Día";
 
             rImgPan.StrokeThickness = 3;
             rImgPescado.StrokeThickness = 1;
             rImgPollo.StrokeThickness = 1;
             rImgFestin.StrokeThickness = 1;
+            
         }
+
+        private string comidaActual;
 
         private void rImgPan_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreComida.Content.ToString() != pan.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            comidaActual = pan.Nombre;
             ComidaPan();
         }
         private void rImgPescado_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreComida.Content.ToString() != pescado.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            comidaActual = pescado.Nombre;
+
             lblNombreComida.Content = pescado.Nombre;
             lblPrecio.Content = $"- {pescado.Precio} x Día";
-            lblExp.Content = $"+ {pescado.XP} x Día";
-            lblLealtad.Content = $"+ {pescado.Lealtad} x Día";
             lblVida.Content = $"+ {pescado.SVida} x Día";
 
             rImgPan.StrokeThickness = 1;
             rImgPescado.StrokeThickness = 3;
             rImgPollo.StrokeThickness = 1;
             rImgFestin.StrokeThickness = 1;
+
         }
         private void rImgPollo_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreComida.Content.ToString() != pollo.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            comidaActual = pollo.Nombre;    
+
             lblNombreComida.Content = pollo.Nombre;
             lblPrecio.Content = $"- {pollo.Precio} x Día";
-            lblExp.Content = $"+ {pollo.XP} x Día";
-            lblLealtad.Content = $"+ {pollo.Lealtad} x Día";
             lblVida.Content = $"+ {pollo.SVida} x Día";
 
             rImgPan.StrokeThickness = 1;
@@ -108,52 +141,82 @@ namespace VikingsGameWPF
         }
         private void rImgFestin_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreComida.Content.ToString() != Festin.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            comidaActual = Festin.Nombre;
+
             lblNombreComida.Content = Festin.Nombre;
             lblPrecio.Content = $"- {Festin.Precio} x Día";
-            lblExp.Content = $"+ {Festin.XP} x Día";
-            lblLealtad.Content = $"+ {Festin.Lealtad} x Día";
             lblVida.Content = $"+ {Festin.SVida} x Día";
 
             rImgPan.StrokeThickness = 1;
             rImgPescado.StrokeThickness = 1;
             rImgPollo.StrokeThickness = 1;
             rImgFestin.StrokeThickness = 3;
+
         }
-        
+
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-            if (lblNombreComida.Content.ToString() == pan.Nombre)
+
+
+            if (lblNombreComida.Content.ToString() == comidaActual)
+            {
+                SonidoClickNo();
+            }
+            else if (lblNombreComida.Content.ToString() == pan.Nombre)
             {
                 if (player.Monedas >= pan.Precio)
                 {
+                    SonidoClickSi();
                     ComidaUsada();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else
+                {
+                    SonidoClickNo();
+                }
             }
             else if (lblNombreComida.Content.ToString() == pescado.Nombre)
             {
                 if (player.Monedas >= pescado.Precio)
                 {
+                    SonidoClickSi();
                     ComidaUsada();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else
+                {
+                    SonidoClickNo();
+                }
             }
             else if (lblNombreComida.Content.ToString() == pollo.Nombre)
             {
                 if (player.Monedas >= pollo.Precio)
                 {
+                    SonidoClickSi();
                     ComidaUsada();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else
+                {
+                    SonidoClickNo();
+                }
             }
             else if (lblNombreComida.Content.ToString() == Festin.Nombre)
             {
                 if (player.Monedas >= Festin.Precio)
                 {
+                    SonidoClickSi();
                     ComidaUsada();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else 
+                {
+                    SonidoClickNo();
+                }
             }
+
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
         }
 
         public void ComidaUsada()

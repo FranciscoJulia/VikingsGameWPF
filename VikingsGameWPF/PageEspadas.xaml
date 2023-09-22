@@ -5,43 +5,44 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VikingsGameWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="440" d:DesignWidth="645"
+      d:DesignHeight="440" d:DesignWidth="1023"
       Title="PageEspadas">
 
     <Grid>
-        <Rectangle x:Name="rImgEspadaActual" HorizontalAlignment="Left" Height="158" Margin="36,105,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
+        <Rectangle x:Name="rImgEspadaActual" HorizontalAlignment="Left" Height="158" Margin="393,105,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/Espadasbtn.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgEspadaBronce" HorizontalAlignment="Center" Height="131" Margin="0,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEspadaBronce_MouseEnter">
+        <Rectangle x:Name="rImgEspadaBronce" HorizontalAlignment="Left" Height="130" Margin="613,13,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEspadaBronce_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/espadaBronce.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgEspadaHierro" HorizontalAlignment="Center" Height="130" Stroke="Black" VerticalAlignment="Center" Width="135" MouseEnter="rImgEspadaHierro_MouseEnter">
+        <Rectangle x:Name="rImgEspadaHierro" HorizontalAlignment="Left" Height="130" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEspadaHierro_MouseEnter" Margin="613,149,0,0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/espadaHierro.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgEspadaAcero" HorizontalAlignment="Center" Height="131" Margin="0,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEspadaAcero_MouseEnter">
+        <Rectangle x:Name="rImgEspadaAcero" HorizontalAlignment="Left" Height="130" Margin="613,285,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEspadaAcero_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/espadaAcero.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="219,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="-7,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,417,0,0"/>
-        <Label x:Name="lblNombreEspada" Content="Label" HorizontalAlignment="Left" Height="50" Margin="415,84,0,0" VerticalAlignment="Top" Width="270" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="417,23,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
-        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="415,132,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="480,132,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="415,170,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="464,170,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="33" Margin="415,208,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="492,208,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblActual" Content="Espada actual" HorizontalAlignment="Left" Height="66" Margin="22,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="572,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="361,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="355,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="367,417,0,0"/>
+        <Label x:Name="lblNombreEspada" Content="Label" HorizontalAlignment="Left" Height="50" Margin="763,81,0,0" VerticalAlignment="Top" Width="270" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="46" Margin="763,14,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
+        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="32" Margin="763,129,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="32" Margin="828,129,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="32" Margin="763,167,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="32" Margin="812,167,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="labelPoder" Content="Poder:" HorizontalAlignment="Left" Height="32" Margin="763,0,0,0" VerticalAlignment="Center" Width="85" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblPoder" Content="xxxx" HorizontalAlignment="Left" Height="32" Margin="828,0,0,0" VerticalAlignment="Center" Width="117" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblActual" Content="Espada actual" HorizontalAlignment="Left" Height="66" Margin="379,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Frame x:Name="FrameSR" Content="Frame" HorizontalAlignment="Left" Height="273" Margin="20,147,0,0" VerticalAlignment="Top" Width="297"/>
 
     </Grid>
 </Page>

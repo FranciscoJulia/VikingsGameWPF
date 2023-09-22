@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,6 +35,9 @@ namespace VikingsGameWPF
             this.player = player;
 
             EspadaActual();
+
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
         }
 
         public void EspadaActual()
@@ -57,13 +61,27 @@ namespace VikingsGameWPF
             }
         }
 
-
+        public void SonidoCambiarSeleccion()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/CambiarSeleccion.wav");
+            sonido.Play();
+        }
+        public void SonidoClickNo()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/clickBotones.wav");
+            sonido.Play();
+        }
+        public void SonidoClickSi()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/ClickSi.wav");
+            sonido.Play();
+        }
         public void EspadaBronce()
         {
             lblNombreEspada.Content = espadaBronce.Nombre;
             lblPrecio.Content = $"- {espadaBronce.Precio} x Día";
             lblExp.Content = $"+ {espadaBronce.XP} x Día";
-            lblLealtad.Content = $"+ {espadaBronce.Lealtad} x Dia";
+            lblPoder.Content = $"+ {espadaBronce.Poder}";
             MostrarElementos();
             rImgEspadaBronce.StrokeThickness = 3;
             rImgEspadaHierro.StrokeThickness = 1;
@@ -79,46 +97,73 @@ namespace VikingsGameWPF
             lblPrecio.Visibility = Visibility.Visible;
         }
 
+        private string espadaActual;
         private void rImgEspadaBronce_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreEspada.Content.ToString() != espadaBronce.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            espadaActual = espadaBronce.Nombre;
             EspadaBronce();
         }
 
         private void rImgEspadaHierro_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreEspada.Content.ToString() != espadaHierro.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            espadaActual = espadaHierro.Nombre;
+
             lblNombreEspada.Content = espadaHierro.Nombre;
             lblPrecio.Content = $"- {espadaHierro.Precio} x Día";
             lblExp.Content = $"+ {espadaHierro.XP} x Día";
-            lblLealtad.Content = $"+ {espadaHierro.Lealtad} x Dia";
+            lblPoder.Content = $"+ {espadaHierro.Poder}";
             MostrarElementos();
             rImgEspadaBronce.StrokeThickness = 1;
             rImgEspadaHierro.StrokeThickness = 3;
             rImgEspadaAcero.StrokeThickness = 1;
+
         }
 
         private void rImgEspadaAcero_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (lblNombreEspada.Content.ToString() != espadaAcero.Nombre)
+            {
+                SonidoCambiarSeleccion();
+            }
+            espadaActual = espadaAcero.Nombre;
+
             lblNombreEspada.Content = espadaAcero.Nombre;
             lblPrecio.Content = $"- {espadaAcero.Precio} x Día";
             lblExp.Content = $"+ {espadaAcero.XP} x Día";
-            lblLealtad.Content = $"+ {espadaAcero.Lealtad} x Dia";
+            lblPoder.Content = $"+ {espadaAcero.Poder}";
             MostrarElementos();
             rImgEspadaBronce.StrokeThickness = 1;
             rImgEspadaHierro.StrokeThickness = 1;
             rImgEspadaAcero.StrokeThickness = 3;
+
         }
 
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-            if (lblNombreEspada.Content.ToString() == espadaBronce.Nombre)
+            if (lblNombreEspada.Content.ToString() == espadaActual) 
+            {
+                SonidoClickNo();
+            }
+            else if (lblNombreEspada.Content.ToString() == espadaBronce.Nombre)
             {
                 if (player.Monedas >= espadaBronce.Precio)
                 {
                     player.EspadaBronce = true;
                     player.EspadaHierro = false;
                     player.EspadaAcero = false;
+
+                    SonidoClickSi();
+                    EspadaActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreEspada.Content.ToString() == espadaHierro.Nombre)
             {
@@ -127,8 +172,11 @@ namespace VikingsGameWPF
                     player.EspadaBronce = false;
                     player.EspadaHierro = true;
                     player.EspadaAcero = false;
+
+                    SonidoClickSi();
+                    EspadaActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreEspada.Content.ToString() == espadaAcero.Nombre)
             {
@@ -137,9 +185,15 @@ namespace VikingsGameWPF
                     player.EspadaBronce = false;
                     player.EspadaHierro = false;
                     player.EspadaAcero = true;
+
+                    SonidoClickSi();
+                    EspadaActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
+
+            FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            FrameSR.NavigationService.Navigate(new PageSRElementos(player));
         }
     }
 }

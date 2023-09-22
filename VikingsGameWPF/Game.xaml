@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Title="Game" Height="800" Width="1400" WindowStartupLocation="CenterScreen">
+        Title="Game" Height="800" Width="1400" WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
 
     <Window.Resources>
         <Style x:Key="BotonPersonalizado" TargetType="Button">
@@ -61,8 +62,8 @@
                 <ImageBrush ImageSource="/Img/Lealtad.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="lblLealtad" Content="Label" HorizontalAlignment="Left" Height="59" Margin="222,107,0,0" VerticalAlignment="Top" Width="139" FontSize="36" Grid.Row="1"/>
-        <Label x:Name="lbl3" Content="Lealtad:" HorizontalAlignment="Left" Height="60" Margin="77,104,0,0" VerticalAlignment="Top" Width="145" FontSize="48" FontFamily="Perpetua" Grid.Row="1"/>
+        <Label x:Name="lblPoder" Content="Label" HorizontalAlignment="Left" Height="59" Margin="204,107,0,0" VerticalAlignment="Top" Width="139" FontSize="36" Grid.Row="1"/>
+        <Label x:Name="lbl3" Content="Poder:" HorizontalAlignment="Left" Height="60" Margin="77,104,0,0" VerticalAlignment="Top" Width="145" FontSize="48" FontFamily="Perpetua" Grid.Row="1"/>
         <Label x:Name="lblTipo" Content="Tipo vikingo" HorizontalAlignment="Left" Height="59" Margin="34,324,0,0" VerticalAlignment="Top" Width="277" FontSize="36"/>
         <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Height="65" Margin="32,244,0,0" VerticalAlignment="Top" Width="173" Click="Button_Click" FontFamily="Perpetua" FontSize="48" Background="White" BorderBrush="#FF211D1D" Grid.Row="1"/>
         <Rectangle x:Name="rImgArmamento" HorizontalAlignment="Left" Height="99" Margin="378,71,0,0" Stroke="Black" VerticalAlignment="Top" Width="265" MouseDown="rImgArmamento_MouseDown" MouseEnter="rImgArmamento_MouseEnter" MouseLeave="rImgArmamento_MouseLeave">
@@ -70,16 +71,14 @@
                 <ImageBrush ImageSource="/Img/btnArmamento.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="lblArmamento" Content="Armamento" HorizontalAlignment="Left" Margin="395,87,0,0" VerticalAlignment="Top" Height="66" Width="235" FontSize="48" FontFamily="Perpetua" Foreground="White" MouseDown="rImgArmamento_MouseDown" MouseEnter="rImgArmamento_MouseEnter"/>
         <Rectangle x:Name="rImgAlimento" HorizontalAlignment="Left" Height="107" Margin="378,173,0,0" Stroke="Black" VerticalAlignment="Top" Width="265" MouseDown="rImgAlimento_MouseDown" MouseEnter="rImgAlimento_MouseEnter" MouseLeave="rImgAlimento_MouseLeave">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/Alimentos.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="lblAlimento" Content="Alimento" HorizontalAlignment="Left" Margin="398,175,0,0" VerticalAlignment="Top" Height="50" Width="190" FontSize="46" FontFamily="Perpetua" Foreground="White" MouseDown="rImgAlimento_MouseDown" MouseEnter="rImgAlimento_MouseEnter"/>
-        <Label x:Name="lblHogar" Content="y Hogar" HorizontalAlignment="Left" Margin="465,210,0,0" VerticalAlignment="Top" Height="65" Width="168" FontSize="46" FontFamily="Perpetua" Foreground="White" MouseDown="rImgAlimento_MouseDown" MouseEnter="rImgAlimento_MouseEnter"/>
-        <StackPanel HorizontalAlignment="Left" Height="800" Margin="674,0,0,0" VerticalAlignment="Top" Width="726" Grid.RowSpan="2">
-            <Frame x:Name="MyFrame" Content="Frame" Height="800"/>
+        <Label x:Name="lblHogar" Content="y Hogar" HorizontalAlignment="Left" Margin="449,211,0,0" VerticalAlignment="Top" Height="66" Width="168" FontSize="46" FontFamily="Perpetua" Foreground="White" MouseDown="rImgAlimento_MouseDown" MouseEnter="rImgAlimento_MouseEnter"/>
+        <StackPanel HorizontalAlignment="Left" Height="800" Margin="361,0,0,0" VerticalAlignment="Top" Width="1039" Grid.RowSpan="2">
+            <Frame x:Name="MyFrame" Content="Frame" Height="800" Width="1037"/>
         </StackPanel>
         <Rectangle x:Name="rImgCorazon" HorizontalAlignment="Left" Height="50" Margin="20,388,0,0" VerticalAlignment="Top" Width="50">
             <Rectangle.Fill>
@@ -88,47 +87,10 @@
         </Rectangle>
         <Label x:Name="lblVida" Content="Label" HorizontalAlignment="Left" Height="58" Margin="180,384,0,0" VerticalAlignment="Top" Width="166" FontSize="36"/>
         <Label x:Name="lbl4" Content="Vida:" HorizontalAlignment="Left" Height="60" Margin="77,383,0,0" VerticalAlignment="Top" Width="118" FontSize="48" FontFamily="Perpetua"/>
-        <Rectangle x:Name="rImgCorazon2" HorizontalAlignment="Left" Height="40" Margin="378,87,0,0" VerticalAlignment="Top" Width="40" Grid.Row="1">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/Corazon.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="rImgMonedas_Copiar" HorizontalAlignment="Left" Height="40" Margin="378,143,0,0" VerticalAlignment="Top" Width="40" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/Img/Coin.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="rImgXP_Copiar" HorizontalAlignment="Left" Height="40" Margin="378,199,0,0" VerticalAlignment="Top" Width="40" Grid.Row="1">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/Img/estrellaXP.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="rImgLealtad_Copiar" HorizontalAlignment="Left" Height="40" Margin="378,256,0,0" VerticalAlignment="Top" Width="40" Grid.Row="1">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/Img/Lealtad.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Label x:Name="lblMas" Content="+" HorizontalAlignment="Left" Height="61" Margin="423,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="40" FontSize="48"/>
-        <Label x:Name="lblMenos" Content="-" HorizontalAlignment="Left" Height="61" Margin="508,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="40" FontSize="52"/>
-        <Label x:Name="lblVidaSuma" Content="X" HorizontalAlignment="Left" Height="46" Margin="432,85,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" FontSize="22"/>
-        <Label x:Name="lblVidaResta" Content="X" HorizontalAlignment="Left" Height="46" Margin="511,85,0,0" Grid.Row="1" VerticalAlignment="Top" Width="66" FontSize="22"/>
-        <Label x:Name="lblCoinSuma" Content="X" HorizontalAlignment="Left" Height="46" Margin="432,140,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" FontSize="22"/>
-        <Label x:Name="lblCoinResta" Content="X" HorizontalAlignment="Left" Height="46" Margin="511,140,0,0" Grid.Row="1" VerticalAlignment="Top" Width="66" FontSize="22"/>
-        <Label x:Name="lblExpSuma" Content="X" HorizontalAlignment="Left" Height="46" Margin="432,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" FontSize="22"/>
-        <Label x:Name="lblExpResta" Content="X" HorizontalAlignment="Left" Height="46" Margin="511,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="66" FontSize="22"/>
-        <Label x:Name="lblLealtadSuma" Content="X" HorizontalAlignment="Left" Height="46" Margin="432,253,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" FontSize="22"/>
-        <Label x:Name="lblLealtadResta" Content="X" HorizontalAlignment="Left" Height="46" Margin="511,253,0,0" Grid.Row="1" VerticalAlignment="Top" Width="66" FontSize="22"/>
-        <Label x:Name="lblIgual" Content="=" HorizontalAlignment="Left" Height="61" Margin="581,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="40" FontSize="52"/>
         <Label x:Name="lblDias" Content="Días" HorizontalAlignment="Left" Height="58" Margin="378,0,0,0" VerticalAlignment="Top" Width="171" FontSize="56" FontFamily="Perpetua"/>
         <Button x:Name="btnDormir" Content="Dormir" HorizontalAlignment="Left" Height="53" Margin="554,9,0,0" VerticalAlignment="Top" Width="89" FontSize="22" FontFamily="Perpetua" Style="{StaticResource BotonPersonalizado}" BorderBrush="#FF828282" Foreground="White" Click="btnDormir_Click"/>
+        <Label x:Name="lblAlimento" Content="    Alimento " HorizontalAlignment="Left" Margin="378,175,0,0" VerticalAlignment="Top" Height="105" Width="265" FontSize="46" FontFamily="Perpetua" Foreground="White" MouseDown="rImgAlimento_MouseDown" MouseEnter="rImgAlimento_MouseEnter" MouseLeave="rImgAlimento_MouseLeave"/>
+        <Label x:Name="lblArmamento" Content="Armamento" HorizontalAlignment="Left" Margin="378,74,0,0" VerticalAlignment="Top" Height="94" Width="265" FontSize="48" FontFamily="Perpetua" Foreground="White" MouseDown="rImgArmamento_MouseDown" MouseEnter="rImgArmamento_MouseEnter" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseLeave="rImgArmamento_MouseLeave"/>
     </Grid>
-    
+
 </Window>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,13 +26,16 @@ namespace VikingsGameWPF
         public PageAlimento(VikingPlayer player)
         {
             InitializeComponent();
-            this.player = player;   
+            this.player = player;
+            FrameArmamento.NavigationService.Navigate(new PageCasas(player));
+            rImgHogares.StrokeThickness = 5;
         }
 
 
         //HOGARES
         private void rImgHogares_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SonidoClickSi();
             FrameArmamento.NavigationService.Navigate(new PageCasas(player));
         }
         private void rImgHogares_MouseEnter(object sender, MouseEventArgs e)
@@ -46,6 +50,7 @@ namespace VikingsGameWPF
         //COMIDAS
         private void rImgAlimento_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SonidoClickSi();
             FrameArmamento.NavigationService.Navigate(new PageComidas(player));
         }
         private void rImgAlimento_MouseEnter(object sender, MouseEventArgs e)
@@ -55,6 +60,12 @@ namespace VikingsGameWPF
         private void rImgAlimento_MouseLeave(object sender, MouseEventArgs e)
         {
             rImgAlimento.StrokeThickness = 1;
+        }
+
+        public void SonidoClickSi()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/ClickSi.wav");
+            sonido.Play();
         }
     }
 }

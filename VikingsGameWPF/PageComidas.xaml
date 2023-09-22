@@ -5,50 +5,66 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VikingsGameWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="440" d:DesignWidth="645"
+      d:DesignHeight="440" d:DesignWidth="1023"
       Title="PageComidas">
 
     <Grid>
-        <Rectangle x:Name="rImgEscudoActual" HorizontalAlignment="Left" Height="158" Margin="30,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="rImgEscudoActual" HorizontalAlignment="Left" Height="158" Margin="395,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/comidas.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgPan" HorizontalAlignment="Center" Height="131" Margin="0,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgPan_MouseEnter">
+        <Rectangle x:Name="rImgPan" HorizontalAlignment="Left" Height="130" Margin="614,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgPan_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/pan.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgPescado" HorizontalAlignment="Center" Height="130" Stroke="Black" VerticalAlignment="Center" Width="135" MouseEnter="rImgPescado_MouseEnter">
+        <Rectangle x:Name="rImgPescado" HorizontalAlignment="Left" Height="130" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgPescado_MouseEnter" Margin="614,153,0,0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Pescado.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgPollo" HorizontalAlignment="Center" Height="131" Margin="0,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgPollo_MouseEnter">
+        <Rectangle x:Name="rImgPollo" HorizontalAlignment="Left" Height="130" Margin="614,289,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgPollo_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Pollo.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="212,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="-7,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,417,0,0"/>
-        <Label x:Name="lblNombreComida" Content="Label" HorizontalAlignment="Left" Height="50" Margin="404,84,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="428,22,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
-        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="404,127,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="470,127,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="404,157,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="454,157,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="34" Margin="404,186,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="34" Margin="481,186,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblActual" Content="Comida actual" HorizontalAlignment="Left" Height="56" Margin="15,40,0,0" VerticalAlignment="Top" Width="206" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Rectangle x:Name="rImgFestin" HorizontalAlignment="Left" Height="148" Margin="480,280,0,0" Stroke="Black" VerticalAlignment="Top" Width="153" MouseEnter="rImgFestin_MouseEnter">
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="577,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="375,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="358,0,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="375,417,0,0"/>
+        <Label x:Name="lblNombreComida" Content="Label" HorizontalAlignment="Left" Height="50" Margin="768,75,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="771,12,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
+        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="831,122,0,0" VerticalAlignment="Top" Width="163" FontFamily="Perpetua" FontSize="24"/>
+        <Label x:Name="lblActual" Content="Comida actual" HorizontalAlignment="Left" Height="56" Margin="380,40,0,0" VerticalAlignment="Top" Width="206" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Rectangle x:Name="rImgFestin" HorizontalAlignment="Left" Height="148" Margin="851,280,0,0" Stroke="Black" VerticalAlignment="Top" Width="153" MouseEnter="rImgFestin_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Festin.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="labelVida" Content="Vida:" HorizontalAlignment="Left" Height="50" Margin="404,217,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="36"/>
-        <Label x:Name="lblVida" Content="xxxx" HorizontalAlignment="Left" Height="48" Margin="482,219,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="36"/>
+        <Label x:Name="lblVida" Content="xxxx" HorizontalAlignment="Left" Height="48" Margin="838,174,0,0" VerticalAlignment="Top" Width="170" FontFamily="Perpetua" FontSize="36"/>
+        <Rectangle x:Name="rImgMonedas" HorizontalAlignment="Left" Height="33" Margin="784,125,0,0" VerticalAlignment="Top" Width="34" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Img/Coin.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="rImgCorazon" HorizontalAlignment="Left" Height="44" Margin="779,180,0,0" VerticalAlignment="Top" Width="44">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Corazon.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Frame x:Name="FrameSR" Content="Frame" HorizontalAlignment="Left" Height="273" Margin="20,147,0,0" VerticalAlignment="Top" Width="297"/>
 
     </Grid>
 </Page>

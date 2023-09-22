@@ -5,42 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VikingsGameWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="440" d:DesignWidth="645"
+      d:DesignHeight="440" d:DesignWidth="1023"
       Title="PageEscudos">
 
     <Grid>
-        <Rectangle x:Name="rImgEscudoActual" HorizontalAlignment="Left" Height="158" Margin="30,101,0,0" Stroke="Black" VerticalAlignment="Top" Width="162">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="337*"/>
+            <ColumnDefinition Width="686*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="rImgEscudoActual" HorizontalAlignment="Left" Height="158" Margin="57,99,0,0" Stroke="Black" VerticalAlignment="Top" Width="162" Grid.Column="1">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/Escudosbtn.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgEscudoMadera" HorizontalAlignment="Center" Height="131" Margin="0,18,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEscudoMadera_MouseEnter">
+        <Rectangle x:Name="rImgEscudoMadera" HorizontalAlignment="Left" Height="131" Margin="283,26,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEscudoMadera_MouseEnter" Grid.Column="1">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/escudoMadera.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgEscudoReforzado" HorizontalAlignment="Center" Height="130" Stroke="Black" VerticalAlignment="Center" Width="135" MouseEnter="rImgEscudoReforzado_MouseEnter">
+        <Rectangle x:Name="rImgEscudoReforzado" HorizontalAlignment="Left" Height="129" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEscudoReforzado_MouseEnter" Margin="283,163,0,0" Grid.Column="1">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/escudoReforzado.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgEscudoUltimum" HorizontalAlignment="Center" Height="131" Margin="0,290,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEscudoUltimum_MouseEnter">
+        <Rectangle x:Name="rImgEscudoUltimum" HorizontalAlignment="Left" Height="130" Margin="283,298,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgEscudoUltimum_MouseEnter" Grid.Column="1">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/escudoReforzadoMejorado.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="212,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Center" Width="22" Fill="#FF6B5145" Margin="-7,0,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="10,417,0,0"/>
-        <Label x:Name="lblNombreEscudo" Content="Label" HorizontalAlignment="Left" Height="50" Margin="404,84,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
-        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="407,23,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click"/>
-        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="404,132,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="470,132,0,0" VerticalAlignment="Top" Width="107" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="404,170,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="454,170,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="labelLealtad" Content="Lealtad:" HorizontalAlignment="Left" Height="33" Margin="404,208,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblLealtad" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="482,208,0,0" VerticalAlignment="Top" Width="117" FontFamily="Perpetua" FontSize="24"/>
-        <Label x:Name="lblActual" Content="Escudo actual" HorizontalAlignment="Left" Height="40" Margin="19,40,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Top" Width="22" Fill="#FF6B5145" Margin="239,-2,0,0" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="37,-2,0,0" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="440" Stroke="#FF6B5145" VerticalAlignment="Top" Width="22" Fill="#FF6B5145" Margin="20,-2,0,0" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="23" Stroke="#FF6B5145" VerticalAlignment="Top" Width="216" Fill="#FF6B5145" Margin="37,415,0,0" Grid.Column="1"/>
+        <Label x:Name="lblNombreEscudo" Content="Label" HorizontalAlignment="Left" Height="50" Margin="430,91,0,0" VerticalAlignment="Top" Width="257" Foreground="Black" FontFamily="Perpetua" FontSize="36" Grid.Column="1"/>
+        <Button x:Name="btnUsar" Content="USAR" HorizontalAlignment="Left" Height="45" Margin="467,28,0,0" VerticalAlignment="Top" Width="194" Background="#FF909090" FontFamily="Perpetua" FontSize="36" Click="btnUsar_Click" Grid.Column="1"/>
+        <Label x:Name="labelPrecio" Content="Coins:" HorizontalAlignment="Left" Height="33" Margin="438,139,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24" Grid.Column="1"/>
+        <Label x:Name="lblPrecio" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="507,139,0,0" VerticalAlignment="Top" Width="106" FontFamily="Perpetua" FontSize="24" Grid.Column="1"/>
+        <Label x:Name="labelExperiencia" Content="Exp:" HorizontalAlignment="Left" Height="33" Margin="438,177,0,0" VerticalAlignment="Top" Width="72" FontFamily="Perpetua" FontSize="24" Grid.Column="1"/>
+        <Label x:Name="lblExp" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="491,177,0,0" VerticalAlignment="Top" Width="128" FontFamily="Perpetua" FontSize="24" Grid.Column="1"/>
+        <Label x:Name="labelPoder" Content="Poder:" HorizontalAlignment="Left" Height="33" Margin="438,215,0,0" VerticalAlignment="Top" Width="85" FontFamily="Perpetua" FontSize="24" Grid.Column="1"/>
+        <Label x:Name="lblPoder" Content="xxxx" HorizontalAlignment="Left" Height="33" Margin="505,215,0,0" VerticalAlignment="Top" Width="118" FontFamily="Perpetua" FontSize="24" Grid.Column="1"/>
+        <Label x:Name="lblActual" Content="Escudo actual" HorizontalAlignment="Left" Height="40" Margin="46,38,0,0" VerticalAlignment="Top" Width="187" Foreground="Black" FontFamily="Perpetua" FontSize="36" Grid.Column="1"/>
+        <Frame x:Name="FrameSR" Content="Frame" HorizontalAlignment="Center" Height="273" Margin="0,147,0,0" VerticalAlignment="Top" Width="297"/>
     </Grid>
 </Page>

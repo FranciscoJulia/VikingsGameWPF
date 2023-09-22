@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,6 +37,7 @@ namespace VikingsGameWPF
         //HACHAS
         private void rImgHachas_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SonidoClickSi();
             FrameArmamento.NavigationService.Navigate(new PageHachas(player));
         }
         private void rImgHachas_MouseEnter(object sender, MouseEventArgs e)
@@ -52,6 +54,7 @@ namespace VikingsGameWPF
         //ESPADAS
         private void rImgEspadas_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SonidoClickSi();
             FrameArmamento.NavigationService.Navigate(new PageEspadas(player));
         }
         private void rImgEspadas_MouseEnter(object sender, MouseEventArgs e)
@@ -67,6 +70,7 @@ namespace VikingsGameWPF
         //ESCUDOS
         private void rImgEscudos_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SonidoClickSi();
             FrameArmamento.NavigationService.Navigate(new PageEscudos(player));
         }
         private void rImgEscudos_MouseEnter(object sender, MouseEventArgs e)
@@ -76,6 +80,14 @@ namespace VikingsGameWPF
         private void rImgEscudos_MouseLeave(object sender, MouseEventArgs e)
         {
             rImgEscudos.StrokeThickness = 1;
+        }
+
+
+        
+        public void SonidoClickSi()
+        {
+            SoundPlayer sonido = new SoundPlayer("Sonidos/ClickSi.wav");
+            sonido.Play();
         }
     }
 }

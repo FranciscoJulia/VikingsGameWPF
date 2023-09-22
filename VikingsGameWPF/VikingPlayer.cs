@@ -69,12 +69,7 @@ namespace VikingsGameWPF
 		}
 		
 		
-        private int poder;
-        public int Poder
-        {
-            get { return poder; }
-            set { poder = value; }
-        }
+        
 		
 		//DIA
 		private int dia;	
@@ -107,12 +102,11 @@ namespace VikingsGameWPF
         public int sumaVidaComida = 0;
         public void SumaVidaElementos()
         {
+            //VIDA DE COMIDAS
             if (ComidaPan) sumaVidaComida = 5;
             else if (ComidaPescado) sumaVidaComida = 20;
             else if (ComidaPollo) sumaVidaComida = 45;
             else if (ComidaFestin) sumaVidaComida = 100;
-
-            //if()
         }
 
         public void GanarVida(int cantVidaGanada)
@@ -159,20 +153,137 @@ namespace VikingsGameWPF
             set { experiencia = value; }
         }
 
+        private int minExp = 0;
+
         public int sumaExpComida = 0;
+        public int sumaExpHacha = 0;
+        public int sumaExpEspada = 0;
+        public int sumaExpEscudo = 0;
         public void SumaExpElementos()
         {
-            if (ComidaPan) sumaExpComida = 5;
-            else if (ComidaPescado) sumaExpComida = 20;
-            else if (ComidaPollo) sumaExpComida = 45;
-            else if (ComidaFestin) sumaExpComida = 100;
+            //EXP DE HACHAS
+            if (HachaNormal) sumaExpHacha = 1;
+            else if (HachaPico) sumaExpHacha = 20;
+            else if (HachaDoble) sumaExpHacha = 45;
 
-            //if()
+            //EXP DE ESPADAS
+            if (EspadaBronce) sumaExpEspada = 1;
+            else if (EspadaHierro) sumaExpEspada = 20;
+            else if (EspadaAcero) sumaExpEspada = 45;
+
+            //EXP ESCUDOS
+            if (EscudoMadera) sumaExpEscudo = 1;
+            else if (EscudoReforzado) sumaExpEscudo = 20;
+            else if (EscudoUltimum) sumaExpEscudo = 45;
+        }
+        public void GanarExp(int cantExpGanada)
+        {
+            experiencia += cantExpGanada;
+        }
+        public void PerderExp(int cantExpPerdida)
+        {
+            if (experiencia - cantExpPerdida < minExp) experiencia = 0;
+            else experiencia -= cantExpPerdida;
+        }
+        public int sumaExp { get; set; }    
+        public void SumaExp()
+        {
+            sumaExp = 0;
+            sumaExp += sumaExpHacha;
+            sumaExp += sumaExpEspada;
+            sumaExp += sumaExpEscudo;
+
+            GanarExp(sumaExp);
+        }
+        public void RestaExp()
+        {
+
+        }
+        //-------------------------//
+
+
+        public int cantPoder { get; set; }
+        public int sumaPoderHacha = 0;
+        public int sumaPoderEspada = 0;
+        public int sumaPoderEscudo = 0;
+        public void CantPoder()
+        {
+            cantPoder = 0;
+
+            //PODER DE HACHAS
+            if (HachaNormal) sumaPoderHacha = 10;
+            else if (HachaPico) sumaPoderHacha = 30;
+            else if (HachaDoble) sumaPoderHacha = 100;
+
+            //PODER DE ESPADAS
+            if (EspadaBronce) sumaPoderEspada = 10;
+            else if (EspadaHierro) sumaPoderEspada = 30;
+            else if (EspadaAcero) sumaPoderEspada = 100;
+
+            //PODER ESCUDOS
+            if (EscudoMadera) sumaPoderEscudo = 10;
+            else if (EscudoReforzado) sumaPoderEscudo = 30;
+            else if (EscudoUltimum) sumaPoderEscudo = 100;
+
+
+            cantPoder += sumaPoderHacha;
+            cantPoder += sumaPoderEspada;
+            cantPoder += sumaPoderEscudo;
+        }
+        //PODER
+        private int poder;
+        public int Poder
+        {
+            get { return poder; }
+            set { poder = value; }
         }
 
+        //private int minPoder = 0;
 
+        ////public int sumaPoderHacha = 0;
+        ////public int sumaPoderEspada = 0;
+        ////public int sumaPoderEscudo = 0;
+        //public void SumaPoderElementos()
+        //{
+        //    //PODER DE HACHAS
+        //    if (HachaNormal) sumaPoderHacha = 10;
+        //    else if (HachaPico) sumaPoderHacha = 30;
+        //    else if (HachaDoble) sumaPoderHacha = 100;
 
+        //    //PODER DE ESPADAS
+        //    if (EspadaBronce) sumaPoderEspada = 10;
+        //    else if (EspadaHierro) sumaPoderEspada = 30;
+        //    else if (EspadaAcero) sumaPoderEspada = 100;
 
+        //    //PODER ESCUDOS
+        //    if (EscudoMadera) sumaPoderEscudo = 10;
+        //    else if (EscudoReforzado) sumaPoderEscudo = 30;
+        //    else if (EscudoUltimum) sumaPoderEscudo = 100;
+        //}
+        //public void GanarPoder(int cantPoderGanado)
+        //{
+        //    poder += cantPoderGanado;
+        //}
+        //public void PerderPoder(int cantPoderPerdido)
+        //{
+        //    if (poder - cantPoderPerdido < minPoder) poder = 0;
+        //    else poder -= cantPoderPerdido;
+        //}
+        //public int sumaPoder { get; set; }
+        //public void SumaPoder()
+        //{
+        //    sumaPoder = 0;
+        //    sumaPoder += sumaPoderHacha;
+        //    sumaPoder += sumaPoderEspada;
+        //    sumaPoder += sumaPoderEscudo;
+
+        //    GanarPoder(sumaPoder);
+        //}
+        //public void RestaPoder()
+        //{
+
+        //}
+        //-------------------//
 
 
         //MONEDAS
