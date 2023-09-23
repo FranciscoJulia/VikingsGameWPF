@@ -35,9 +35,6 @@ namespace VikingsGameWPF
 
             Datos();
 
-
-
-            
         }
 
         
@@ -49,9 +46,6 @@ namespace VikingsGameWPF
 
         public void Datos()
         {
-            
-            
-
             player.Nombre = nombrePlayer;
             lblNombre.Content = player.Nombre.ToString();
             lblMonedas.Content = player.Monedas.ToString();
@@ -63,9 +57,6 @@ namespace VikingsGameWPF
 
             player.CantPoder();
             lblPoder.Content = player.cantPoder.ToString();
-
-            
-            
         }
 
 
@@ -123,11 +114,18 @@ namespace VikingsGameWPF
 
         private void btnDormir_Click(object sender, RoutedEventArgs e)
         {
-            player.SumaExp();
+            player.SumaVidaElementos();
             player.SumaVida();
+            player.GanarVida(player.sumaVida);
+            
+
+            player.SumaExpElementos();
+            player.SumaExp();
+            player.GanarExp(player.sumaExp);
+
+            Datos();
 
             player.Dia++;
-            Datos();
         }
         
 

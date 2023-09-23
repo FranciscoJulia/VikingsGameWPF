@@ -148,11 +148,7 @@ namespace VikingsGameWPF
 
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-            if (lblNombreEspada.Content.ToString() == espadaActual) 
-            {
-                SonidoClickNo();
-            }
-            else if (lblNombreEspada.Content.ToString() == espadaBronce.Nombre)
+            if (lblNombreEspada.Content.ToString() == espadaBronce.Nombre)
             {
                 if (player.Monedas >= espadaBronce.Precio)
                 {

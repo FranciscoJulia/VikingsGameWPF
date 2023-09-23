@@ -29,6 +29,9 @@ namespace VikingsGameWPF
 
 
             //SRVIDA
+            player.sumaExp = 0;
+            player.sumaVida = 0;
+
             SRVIDA();
             lblVidaSuma.Content = player.sumaVida.ToString();
             //lblVidaResta.Content = player.restaVida.ToString();

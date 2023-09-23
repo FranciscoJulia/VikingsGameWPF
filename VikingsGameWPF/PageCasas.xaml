@@ -60,6 +60,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <Frame x:Name="FrameSR" Content="Frame" HorizontalAlignment="Left" Height="273" Margin="20,147,0,0" VerticalAlignment="Top" Width="297"/>
+        <Label x:Name="lblReservaVida1" Content="Reserva: 1000" HorizontalAlignment="Left" Height="48" Margin="394,261,0,0" VerticalAlignment="Top" Width="297" FontFamily="Perpetua" FontSize="30"/>
 
     </Grid>
 </Page>

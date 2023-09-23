@@ -149,11 +149,7 @@ namespace VikingsGameWPF
 
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-            if (lblNombreEscudo.Content.ToString() == escudoActual)
-            {
-                SonidoClickNo();
-            }
-            else if (lblNombreEscudo.Content.ToString() == escudoMadera.Nombre)
+            if (lblNombreEscudo.Content.ToString() == escudoMadera.Nombre)
             {
                 if (player.Monedas >= escudoMadera.Precio)
                 {
@@ -198,7 +194,6 @@ namespace VikingsGameWPF
 
             FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             FrameSR.NavigationService.Navigate(new PageSRElementos(player));
-
         }
     }
 }

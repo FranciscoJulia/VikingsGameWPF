@@ -160,16 +160,15 @@ namespace VikingsGameWPF
 
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-
-
-            if (lblNombreComida.Content.ToString() == comidaActual)
-            {
-                SonidoClickNo();
-            }
-            else if (lblNombreComida.Content.ToString() == pan.Nombre)
+            if (lblNombreComida.Content.ToString() == pan.Nombre)
             {
                 if (player.Monedas >= pan.Precio)
                 {
+                    player.ComidaPan = true;
+                    player.ComidaPescado = false;
+                    player.ComidaPollo = false;
+                    player.ComidaFestin = false;
+
                     SonidoClickSi();
                     ComidaUsada();
                 }
@@ -182,6 +181,11 @@ namespace VikingsGameWPF
             {
                 if (player.Monedas >= pescado.Precio)
                 {
+                    player.ComidaPan = false;
+                    player.ComidaPescado = true;
+                    player.ComidaPollo = false;
+                    player.ComidaFestin = false;
+
                     SonidoClickSi();
                     ComidaUsada();
                 }
@@ -194,6 +198,11 @@ namespace VikingsGameWPF
             {
                 if (player.Monedas >= pollo.Precio)
                 {
+                    player.ComidaPan = false;
+                    player.ComidaPescado = false;
+                    player.ComidaPollo = true;
+                    player.ComidaFestin = false;
+
                     SonidoClickSi();
                     ComidaUsada();
                 }
@@ -206,6 +215,11 @@ namespace VikingsGameWPF
             {
                 if (player.Monedas >= Festin.Precio)
                 {
+                    player.ComidaPan = false;
+                    player.ComidaPescado = false;
+                    player.ComidaPollo = false;
+                    player.ComidaFestin = true;
+
                     SonidoClickSi();
                     ComidaUsada();
                 }

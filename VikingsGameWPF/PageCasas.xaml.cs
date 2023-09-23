@@ -47,21 +47,25 @@ namespace VikingsGameWPF
             {
                 newImageBrush.ImageSource = new BitmapImage(new Uri("Img/choza.jpg", UriKind.Relative));
                 rImgEscudoActual.Fill = newImageBrush;
+                lblReservaVida1.Content = $"Reserva: {choza.ReservaVida}";
             }
             else if (player.CasaPequeña)
             {
                 newImageBrush.ImageSource = new BitmapImage(new Uri("Img/pequeñaCasa.jpg", UriKind.Relative));
                 rImgEscudoActual.Fill = newImageBrush;
+                lblReservaVida1.Content = $"Reserva: {casaPequeña.ReservaVida}"; 
             }
             else if (player.CasaMansion)
             {
                 newImageBrush.ImageSource = new BitmapImage(new Uri("Img/Mansion.jpg", UriKind.Relative));
                 rImgEscudoActual.Fill = newImageBrush;
+                lblReservaVida1.Content = $"Reserva: {mansion.ReservaVida}";
             }
             else if (player.CasaMansionPiedra)
             {
                 newImageBrush.ImageSource = new BitmapImage(new Uri("Img/MansionPiedra.jpg", UriKind.Relative));
                 rImgEscudoActual.Fill = newImageBrush;
+                lblReservaVida1.Content = $"Reserva: {mansionPiedra.ReservaVida}";
             }
         }
 
@@ -145,41 +149,50 @@ namespace VikingsGameWPF
         private string casaActual;
         private void btnUsar_Click(object sender, RoutedEventArgs e)
         {
-            if (lblNombreCasa.Content.ToString() == casaActual)
-            {
-                SonidoClickNo();
-            }
-            else if (lblNombreCasa.Content.ToString() == choza.Nombre)
+            if (lblNombreCasa.Content.ToString() == choza.Nombre)
             {
                 if (player.Monedas >= choza.Precio)
                 {
+                    
+
                     CasaUsada();
+                    SonidoClickSi();
+                    HogarActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreCasa.Content.ToString() == casaPequeña.Nombre)
             {
                 if (player.Monedas >= casaPequeña.Precio)
                 {
+
                     CasaUsada();
+                    SonidoClickSi();
+                    HogarActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreCasa.Content.ToString() == mansion.Nombre)
             {
                 if (player.Monedas >= mansion.Precio)
                 {
+
                     CasaUsada();
+                    SonidoClickSi();
+                    HogarActual();
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
             else if (lblNombreCasa.Content.ToString() == mansionPiedra.Nombre)
             {
                 if (player.Monedas >= mansionPiedra.Precio)
                 {
                     CasaUsada();
+                    SonidoClickSi();
+                    HogarActual();
+                    
                 }
-                else MessageBox.Show("No tienes suficientes monedas...");
+                else SonidoClickNo();
             }
 
             FrameSR.NavigationUIVisibility = NavigationUIVisibility.Hidden;
@@ -210,7 +223,7 @@ namespace VikingsGameWPF
                 player.CasaMansionPiedra = false;
 
                 player.CasaChoza = true;
-                player.MaxVida = choza.ReservaVida;
+                player.MaxVida();
             } 
                 
             if (lblNombreCasa.Content.ToString() == casaPequeña.Nombre)
@@ -220,7 +233,7 @@ namespace VikingsGameWPF
                 player.CasaMansionPiedra = false;
 
                 player.CasaPequeña = true;
-                player.MaxVida = casaPequeña.ReservaVida;
+                player.MaxVida();
             }
             
             if (lblNombreCasa.Content.ToString() == mansion.Nombre)
@@ -230,7 +243,7 @@ namespace VikingsGameWPF
                 player.CasaMansionPiedra = false;
 
                 player.CasaMansion = true;
-                player.MaxVida = mansion.ReservaVida;
+                player.MaxVida();
             }
             if (lblNombreCasa.Content.ToString() == mansionPiedra.Nombre)
             {
@@ -239,7 +252,7 @@ namespace VikingsGameWPF
                 player.CasaMansion = false;
 
                 player.CasaMansionPiedra = true;
-                player.MaxVida = mansionPiedra.ReservaVida;
+                player.MaxVida();
             }
         }
     }

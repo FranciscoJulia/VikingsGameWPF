@@ -14,17 +14,17 @@
                 <ImageBrush ImageSource="/Img/Hachasbtn.jpg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgHachaNormal" HorizontalAlignment="Left" Height="131" Margin="614,21,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaNormal_MouseDown" MouseEnter="rImgHachaNormal_MouseEnter" MouseLeave="rImgHachaNormal_MouseLeave">
+        <Rectangle x:Name="rImgHachaNormal" HorizontalAlignment="Left" Height="131" Margin="614,21,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgHachaNormal_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/normalAxe.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgHachaPico" HorizontalAlignment="Left" Height="130" Margin="614,158,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaPico_MouseDown" MouseEnter="rImgHachaPico_MouseEnter" MouseLeave="rImgHachaPico_MouseLeave">
+        <Rectangle x:Name="rImgHachaPico" HorizontalAlignment="Left" Height="130" Margin="614,158,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgHachaPico_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/hachaPico.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="rImgHachaDoble" HorizontalAlignment="Left" Height="131" Margin="614,293,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseDown="rImgHachaDoble_MouseDown" MouseEnter="rImgHachaDoble_MouseEnter" MouseLeave="rImgHachaDoble_MouseLeave">
+        <Rectangle x:Name="rImgHachaDoble" HorizontalAlignment="Left" Height="131" Margin="614,293,0,0" Stroke="Black" VerticalAlignment="Top" Width="135" MouseEnter="rImgHachaDoble_MouseEnter">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/Img/doubleAxe.png"/>
             </Rectangle.Fill>

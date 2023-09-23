@@ -11,7 +11,7 @@ namespace VikingsGameWPF
 		public VikingPlayer() 
 		{
             tipo = "Agricultor";
-            monedas = 0;
+            monedas = 5000;
             experiencia = 0;
             poder = 0;
 			vida = 100;
@@ -92,11 +92,14 @@ namespace VikingsGameWPF
             set { vida = value; }
         }
         private int maxVida;
-        public int MaxVida
+        public void MaxVida()
         {
-            get { return maxVida; }
-            set { maxVida = value; }
+            if (CasaChoza == true) maxVida = 100;
+            else if (CasaPequeña == true) maxVida = 500;
+            else if (CasaMansion == true) maxVida = 2000;
+            else if (CasaMansionPiedra == true) maxVida = 4000;
         }
+        
         private int minVida = 0;
 
         public int sumaVidaComida = 0;
@@ -104,9 +107,9 @@ namespace VikingsGameWPF
         {
             //VIDA DE COMIDAS
             if (ComidaPan) sumaVidaComida = 5;
-            else if (ComidaPescado) sumaVidaComida = 20;
-            else if (ComidaPollo) sumaVidaComida = 45;
-            else if (ComidaFestin) sumaVidaComida = 100;
+            else if (ComidaPescado) sumaVidaComida = 25;
+            else if (ComidaPollo) sumaVidaComida = 60;
+            else if (ComidaFestin) sumaVidaComida = 150;
         }
 
         public void GanarVida(int cantVidaGanada)
@@ -135,8 +138,6 @@ namespace VikingsGameWPF
 		{
 			sumaVida = 0;
 			sumaVida += sumaVidaComida;
-
-			GanarVida(sumaVida);
 		}
         public void RestaVida()
         {
@@ -155,12 +156,14 @@ namespace VikingsGameWPF
 
         private int minExp = 0;
 
-        public int sumaExpComida = 0;
         public int sumaExpHacha = 0;
         public int sumaExpEspada = 0;
         public int sumaExpEscudo = 0;
         public void SumaExpElementos()
         {
+            sumaExpHacha = 0;
+            sumaExpEspada = 0;
+            sumaExpEscudo = 0;
             //EXP DE HACHAS
             if (HachaNormal) sumaExpHacha = 1;
             else if (HachaPico) sumaExpHacha = 20;
@@ -192,8 +195,6 @@ namespace VikingsGameWPF
             sumaExp += sumaExpHacha;
             sumaExp += sumaExpEspada;
             sumaExp += sumaExpEscudo;
-
-            GanarExp(sumaExp);
         }
         public void RestaExp()
         {
