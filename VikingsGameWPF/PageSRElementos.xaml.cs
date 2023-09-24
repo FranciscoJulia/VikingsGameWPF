@@ -31,6 +31,7 @@ namespace VikingsGameWPF
             //SRVIDA
             player.sumaExp = 0;
             player.sumaVida = 0;
+            player.restaMonedas = 0;
 
             SRVIDA();
             lblVidaSuma.Content = player.sumaVida.ToString();
@@ -38,6 +39,9 @@ namespace VikingsGameWPF
             //SREXP
             SREXP();
             lblExpSuma.Content = player.sumaExp.ToString();
+
+            SRMONEDAS();
+            lblCoinResta.Content = player.restaMonedas.ToString();
 
             //SRPODER
             //player.sumaPoder = 0;
@@ -57,6 +61,13 @@ namespace VikingsGameWPF
             player.SumaExpElementos();
             player.SumaExp();
             player.RestaExp();
+        }
+
+        public void SRMONEDAS()
+        {
+            player.RestaMonedasElementos();
+            player.RestaMonedas();
+            
         }
 
         //public void SRPODER()

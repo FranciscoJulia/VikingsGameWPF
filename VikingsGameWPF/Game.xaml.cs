@@ -123,9 +123,16 @@ namespace VikingsGameWPF
             player.SumaExp();
             player.GanarExp(player.sumaExp);
 
-            Datos();
+
+            player.RestaMonedasElementos();
+            player.RestaMonedas();
+            player.PerderMonedas(player.restaMonedas);
+
 
             player.Dia++;
+            Datos();
+
+           
         }
         
 

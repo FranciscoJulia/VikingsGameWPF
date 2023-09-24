@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace VikingsGameWPF
 {
@@ -294,21 +296,87 @@ namespace VikingsGameWPF
             get { return monedas; }
             set { monedas = value; }
         }
+
         private int minMonedas = 0;
 
+        public int restaMonedasHacha = 0;
+        public int restaMonedasEspada = 0;
+        public int restaMonedasEscudo = 0;
+        public void RestaMonedasElementos()
+        {
+            restaMonedasHacha = 0;
+            restaMonedasEspada = 0;
+            restaMonedasEscudo = 0;
+            //EXP DE HACHAS
+            if (HachaNormal) restaMonedasHacha = 0;
+            else if (HachaPico) restaMonedasHacha = 40;
+            else if (HachaDoble) restaMonedasHacha = 100;
+
+            //EXP DE ESPADAS
+            if (EspadaBronce) restaMonedasEspada = 0;
+            else if (EspadaHierro) restaMonedasEspada = 40;
+            else if (EspadaAcero) restaMonedasEspada = 100;
+
+            //EXP ESCUDOS
+            if (EscudoMadera) restaMonedasEscudo = 0;
+            else if (EscudoReforzado) restaMonedasEscudo = 40;
+            else if (EscudoUltimum) restaMonedasEscudo = 100;
+        }
         public void GanarMonedas(int cantMonedaGanada)
         {
             monedas += cantMonedaGanada;
         }
         public void PerderMonedas(int cantMonedaPerdida)
         {
-            if (monedas - cantMonedaPerdida < minMonedas)
+            if (monedas - cantMonedaPerdida <= minMonedas) 
             {
+                resetElementos();
                 monedas = 0;
             }
-            else
+            else monedas -= cantMonedaPerdida;
+        }
+        public int restaMonedas { get; set; }
+        public void RestaMonedas()
+        {
+            restaMonedas = 0;
+            restaMonedas += restaMonedasHacha;
+            restaMonedas += restaMonedasEspada;
+            restaMonedas += restaMonedasEscudo;
+        }
+
+        private void resetElementos()
+        {
+            HachaNormal = true;
+            HachaPico = false;
+            HachaDoble = false;
+
+            EspadaBronce = true;
+            EspadaHierro = false;
+            EspadaAcero = false;
+
+            EscudoMadera = true;
+            EscudoReforzado = false;
+            EscudoUltimum = false;
+        }
+
+        public void revisaArmamento() // revisa si el jugador aún tiene el dinero para utilizar el arma
+        {
+            if(monedas < 40)
             {
-                monedas -= cantMonedaPerdida;
+                HachaNormal = true;
+                HachaPico = false;
+                HachaDoble = false;
+
+                EspadaBronce = true;
+                EspadaHierro = false;
+                EspadaAcero = false;
+
+                EscudoMadera = true;
+                EscudoReforzado = false;
+                EscudoUltimum = false;
+            }else if (monedas <= 80)
+            {
+
             }
         }
     }
